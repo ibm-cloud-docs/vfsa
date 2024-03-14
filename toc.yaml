@@ -1,0 +1,69 @@
+
+toc:
+  properties:
+    subcollection: vfsa
+    version: 2
+    category: network_classic
+    audience: service
+    href: /docs/vfsa
+    console-page: https://cloud.ibm.com/catalog/content/juniper-vfsa-catalog-deploy-1.4-dc1e707c-33dd-4321-b2a5-c22dbf0dd0ee-global
+    product-page: https://www.ibm.com/products/network-appliances
+    path: vfsa
+    label: IBM Cloud Virtual FortiGate Security Appliance
+
+  entries:
+    - navgroup:
+       id: learn
+       topics:
+       - getting-started.md
+       - about.md
+       - include: /FortiGate-10g/explore-firewalls.md
+       - topicgroup:
+           label: Related links
+           topics:
+           - link:
+               label: "What is network security?"
+               href: https://www.ibm.com/topics/networking
+       - release-notes.md
+
+    - navgroup:
+        id: howto
+        topics:
+        - topicgroup:
+            label: Performing vFSA basics
+            topics:
+            - vfsa-access.md
+            - include: ../gateway-appliance/access-gateway-appliances.md
+            - include: ../gateway-appliance/access-gateway-details.md
+            - include: ../gateway-appliance/rename-gateway.md
+            - include: ../gateway-appliance/cancel-gateway.md
+            - vfsa-basics.md
+        - topicgroup:
+            label: Checking vFSA readiness
+            topics:
+            - readiness.md
+            - readiness_errors.md
+            - readiness_correcting_errors.md
+        - include: ../gateway-appliance/manage-vlans.md
+        - securing-host.md
+        - topicgroup:
+            label: Working with the vFSA default configuration
+            topics:
+            - vfsa-default-config.md
+            - vfsa-import-and-export-config.md
+            - migrating-config.md
+        - vfsa-upgrade.md
+        - vfsa-license.md
+        - renew-license.md
+        - os-reload.md
+        - rebuild-cluster.md
+
+    - navgroup:
+        id: reference
+        topics:
+        - vfsa-version-notes.md
+
+    - navgroup:
+        id: help
+        topics:
+        - known-limitations.md
