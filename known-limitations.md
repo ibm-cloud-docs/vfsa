@@ -31,3 +31,8 @@ There are some limitations to be aware of when using {{site.data.keyword.vfsa_fu
 * vFSA license validation requires a public internet connection to the Fortinet Cloud for license entitlement.
 
 * There is no access to FortiCloud or FortiGate Cloud logging and management because licensing is registered to IBM's Fortinet Account.
+
+* The licensing shown when ordering the vFSA is the only licensing available through IBM Cloud currently. All other licensing can only be implemented through a "third party". This includes FortiClient licensing for endpoint protection, as well as ZTNA, FortiToken, FortiEMS installed on Windows Server (this licensing is included with Forticlient licensing), [virtual FortiManagers](https://docs.fortinet.com/document/fortimanager-public-cloud/7.0.0/ibm-administration-guide/992669/deploying-fortimanager-vm-on-ibm-cloud) and [virtual FortiAnalyzers](https://docs.fortinet.com/document/fortianalyzer-public-cloud/7.0.0/ibm-administration-guide/992669/deploying-fortianalyzer-vm-on-ibm-cloud). 
+
+   Both the virtual FortiManagers and FortiAnalyzers are currently tested and deployable through VPC custom images.
+   {: note}

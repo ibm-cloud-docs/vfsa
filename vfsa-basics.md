@@ -21,13 +21,14 @@ subcollection: vfsa
 {{site.data.keyword.attribute-definition-list}}
 
 # Performing additional vFSA tasks
-{: #performing-ibm-cloud-juniper-vfsa-basics}
+{: #performing-ibm-cloud-fortinet-vfsa-basics}
 
-You can configure and maintain your {{site.data.keyword.vfsa_full}} in a variety of ways, either through a remote console session through SSH or by logging into the vFSA web management GUI.
+You can configure and maintain your {{site.data.keyword.vfsa_full}} (vFSA) in a variety of ways, including using SSH to connect directly to the vFSA VM, logging into the vFSA web management GUI, or by using SSH to connect to the Ubuntu hypervisor and then initiating a KVM console session to the vFSA VM. 
 {: shortdesc}
 
-Configuring the vFSA outside of its shell and interface might produce unexpected results and is not recommended.
-{: note}
+You can also configure and manage multiple FortiGates at the same time using the [FortiManager](https://www.fortinet.com/products/management/fortimanager) appliance (virtual or hardware) or with other automation and orchestration tools, such as Ansible, that utilize the Fortinet API.
+
+By connecting your {{site.data.keyword.vfsa_full}} to a [FortiAnalyzer](https://www.fortinet.com/products/management/fortianalyzer) appliance (virtual or hardware), you can receive analytics, centralized logging, automation and visibility into all of your appliances and devices within the Fortinet Security Fabric.
 
 ## Accessing the device using SSH
 {: #accessing-the-device-using-ssh}
@@ -38,9 +39,9 @@ Once private network connectivity is setup:
 
 1. Go to Gateway Appliance Details page and retrieve the Private gateway IP.
 
-2. Click the "eye" icon to reveal the admin user's password.
+1. Click the "eye" icon to reveal the admin user's password.
 
-3. For a vFSA, run the command `ssh admin@<gateway-ip>`, then enter the admin user's password.
+1. For a vFSA, in an SSH client or terminal, run the command `ssh admin@<gateway-ip>`, then enter the admin user's password.
 
    For the host (Ubuntu), use the `root` user ID and password. SSH to the Ubuntu host is only enabled on the private interface.
    {: note}
@@ -74,4 +75,4 @@ show firewall policy
 ## Accessing the device using the vFSA web management UI
 {: #accessing-the-device-using-the-vfsa-web-management-ui}
 
-The vFSA web management GUI has been configured by default, with a vFSA generated self-signed certificate. Only HTTPS is enabled on port 443. You can access it at `https://<vFSA Private IP>:443`. It is also accessible directly from the vFSA Gateway Details page through the clickable link under **vFSA > Public IP** if the Public interface is enabled for the web management console (by default it is not enabled).
+The vFSA web management GUI has been configured, by default, with a vFSA generated self-signed certificate. Only HTTPS is enabled on port 443. You can access it at `https://<vFSA Private IP>:443`. It is also accessible directly from the vFSA Gateway Details page by clicking **vFSA > Public IP** if the Public interface is enabled for the web management console (by default it is not). Keep both the SSH and HTTPS management locked down to the private IP, as both ports are widely targeted on public networks for scans and attacks. HTTP and HTTPS vulnerabilities are constantly being found. This advice pertains to any device you have access to.

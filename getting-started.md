@@ -34,6 +34,9 @@ These features include:
 * [Application control](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/application-control)
 * [Automation stitches](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/139441/automation-stitches)
 * Integration into the [Fortinet security fabric](https://www.fortinet.com/solutions/enterprise-midsize-business/security-fabric).
+* [DoS Polices](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy)
+* [Session Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy) for distributing specific security processing like Antivirus to FortiGate cluster members in active-active HA
+* [Server Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/713497/virtual-server-load-balance)
 
 For a list of known limitations with {{site.data.keyword.vfsa_full}}, see [Known limitations](/docs/vfsa?topic=vfsa-known-limitations-for-ibm-cloud-vfsa).
 {: note}
@@ -51,7 +54,8 @@ Each license includes a different set of features and options, and the following
 
 | License Name                     | Features/Security Services                       |
 |----------------------------------|--------------------------------------------------|
-| Advanced Threat Protection (ATP) | Application control                              |
+| Advanced Threat Protection (ATP) | Intrustion Prevention System (IPS)               |
+|                                  | Application control                              |
 |                                  | Geo IP Updates                                   |
 |                                  | Device/OS Detection                              |
 |                                  | IoT Mac Database                                 |
