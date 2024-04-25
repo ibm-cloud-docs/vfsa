@@ -62,7 +62,7 @@ The IBM Cloud vFSA is managed using two separate components:
 * The vFSA servers (Bare Metal and FortiGate VM)
 * The [Gateway Appliance section of the IBM Cloud console](/netsec/gateway-appliances)
 
-Instead of using the IBM Cloud console, you can also use the SLAPI for the same functionality. 
+Instead of using the IBM Cloud console, you can also use the [SLAPI](https://sldn.softlayer.com/reference/services/SoftLayer_Network_Gateway/){: external} for the same functionality. 
 {: tip}
 
 The gateway appliance section of the IBM Cloud console provides an interface for selecting the VLANs that you want to associate with your vFSA. Associating and then setting a VLAN to "route through" does two things: 

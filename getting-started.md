@@ -115,9 +115,6 @@ To order your {{site.data.keyword.vfsa_full}}, follow these steps:
    You can have up to four disks per vFSA. "Disk size" with a RAID configuration is the usable disk size, as RAID configurations for every type of RAID other than RAID0 will change the amount of storage available.
    {: note}
 
-   Reserve more than the default disk setting if you plan to run network diagnostics that generate detailed logs.
-   {: tip}
-
 1. All of the settings in the **Network interface** section should be preselected and are not modifiable. The vFSA supports only redundant public and private interfaces with a port speed that matches the **Version** specified earlier in the order form. "Private only" network interfaces are not supported.
 1. Review your selections, check that you read the Third-Party Service Agreements, then click **Create**. The order is verified automatically.
 
