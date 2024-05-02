@@ -52,6 +52,7 @@ toc:
             - vfsa-default-config.md
             - vfsa-import-and-export-config.md
             - migrating-config.md
+        - configure-vlan-subnets.md
         - vfsa-upgrade.md
         - vfsa-license.md
         - renew-license.md
