@@ -103,7 +103,7 @@ end
 ```
 {: pre}
 
-## VLAN and sUbnet gateway configuration for a stand-alone vFSA
+## VLAN and subnet gateway configuration for a stand-alone vFSA
 {: #standalone-config}
 
 For the Standalone vFSA, the VLAN interface configurations and the subnet gateway configurations are identical to the HA configurations, with the exception that the parent interface for inside private VLANs is `agg0` and the parent interface for inside public VLANs is `agg1`. In the following examples, the same sample VLANs and subnets from the previous HA example configurations are used.
