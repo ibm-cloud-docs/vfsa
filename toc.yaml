@@ -38,6 +38,7 @@ toc:
             - include: ../gateway-appliance/rename-gateway.md
             - include: ../gateway-appliance/cancel-gateway.md
             - vfsa-basics.md
+            - configure-vlan-subnets.md
         - topicgroup:
             label: Checking vFSA readiness
             topics:
@@ -52,7 +53,6 @@ toc:
             - vfsa-default-config.md
             - vfsa-import-and-export-config.md
             - migrating-config.md
-        - configure-vlan-subnets.md
         - vfsa-upgrade.md
         - vfsa-license.md
         - renew-license.md
