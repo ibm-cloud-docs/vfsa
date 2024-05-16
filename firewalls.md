@@ -129,7 +129,7 @@ config firewall policy
     next
 end
 ```
-{; pre}
+{: pre}
 
 Next, create a firewall policy that blocks `ping` (icmp) from sub-interface `VLAN_781` to sub-interface `VLAN_794`:
 
