@@ -12,14 +12,6 @@ subcollection: vfsa
 
 {{site.data.keyword.attribute-definition-list}}
 
-keywords: reloading, upgrading, kvm, ha, stand-alone, compatibility, versions
-
-subcollection: vfsa
-
----
-
-{{site.data.keyword.attribute-definition-list}}
-
 # Setting up system logging
 {: #system-logging}
 

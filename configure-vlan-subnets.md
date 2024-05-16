@@ -174,4 +174,5 @@ end
 ## Next steps
 {: #configure-vlan-next-steps}
 
-Next, you will need to create [firewall policies](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/656084/firewall-policy){: external} to allow the necessary traffic flow.
+Next, you will need to create firewall policies to allow traffic flows to these interfaces. Traffic is denied by default. For more information, refer to [Working with firewalls](/docs/vfsa?topic=vfsa-firewalls).
+

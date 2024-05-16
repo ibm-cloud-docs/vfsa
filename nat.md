@@ -24,38 +24,35 @@ This topic provides a sample configuration for sNAT on a vFSA appliance. With th
 
 
 ```sh
-from-zone CUSTOMER-PRIVATE to-zone SL-PUBLIC {
-   policy SNAT {
-       match {
-           source-address any;
-           destination-address any;
-           application any;
-       }
-       then {
-           permit;
-       }
-   }
-}
+# sNAT configuration example
 
-nat {
-   source {
-       rule-set rs1 {
-           from zone CUSTOMER-PRIVATE;
-           to zone SL-PUBLIC;
-           rule r1 {
-               match {
-                   source-address 0.0.0.0/0;
-                   destination-address 0.0.0.0/0;
-               }
-               then {
-                   source-nat {
-                       interface;
-                   }
-               }
-           }
-       }
-   }
-}
+#enable central-nat
+config system settings
+    set central-nat enable
+end
+
+#set up sNAT
+config firewall central-snat-map
+    edit 1
+        set srcintf "VLAN_1"
+        set dstintf "agg1"
+        set orig-addr "all"
+        set dst-addr "all"
+    next
+end
+
+#set up firewall to specify allowed service
+config firewall policy
+    edit 10
+        set srcintf "VLAN_1"
+        set dstintf "agg1"
+        set action accept
+        set srcaddr "all"
+        set dstaddr "all"
+        set schedule "always"
+        set service "PING" "HTTPS"
+    next
+end
 ```
 
-To configure NAT for the {{site.data.keyword.vfsa_full}}, refer to this [configuration guide](https://www.juniper.net/documentation/en_US/junos/information-products/pathway-pages/security/security-nat.pdf){: external} on the Juniper website.
+To configure NAT for the {{site.data.keyword.vfsa_full}}, refer to this [configuration guide](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/421028/central-snat){: external} on the Fortinet website.

@@ -46,13 +46,22 @@ toc:
             - readiness_errors.md
             - readiness_correcting_errors.md
         - include: ../gateway-appliance/manage-vlans.md
-        - securing-host.md
         - topicgroup:
             label: Working with the vFSA default configuration
             topics:
             - vfsa-default-config.md
             - vfsa-import-and-export-config.md
             - migrating-config.md
+        - topicgroup:
+            label: Performing vFSA advanced tasks
+            topics:
+            - firewalls.md
+            - nat.md
+            - failover.md
+            - routing.md
+            - vpn.md
+            - securing-host.md
+            - system-logging.md
         - vfsa-upgrade.md
         - vfsa-license.md
         - renew-license.md
