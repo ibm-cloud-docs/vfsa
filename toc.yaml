@@ -1,4 +1,3 @@
-
 toc:
   properties:
     subcollection: vfsa
@@ -10,7 +9,6 @@ toc:
     product-page: https://www.ibm.com/products/network-appliances
     path: vfsa
     label: IBM Cloud Virtual FortiGate Security Appliance
-
   entries:
     - navgroup:
        id: learn
@@ -25,7 +23,6 @@ toc:
                label: "What is network security?"
                href: https://www.ibm.com/topics/networking
        - release-notes.md
-
     - navgroup:
         id: howto
         topics:
@@ -57,18 +54,20 @@ toc:
             topics:
             - firewalls.md
             - nat.md
+            - failover.md
+            - routing.md
+            - vpn.md
             - securing-host.md
+            - system-logging.md
         - vfsa-upgrade.md
         - vfsa-license.md
         - renew-license.md
         - os-reload.md
         - rebuild-cluster.md
-
     - navgroup:
         id: reference
         topics:
         - vfsa-version-notes.md
-
     - navgroup:
         id: help
         topics:
