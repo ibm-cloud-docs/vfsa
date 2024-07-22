@@ -33,7 +33,7 @@ These features include:
 * [SD-WAN](https://www.fortinet.com/resources/cyberglossary/sd-wan-explained) and [ECMP](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/25967/equal-cost-multi-path)
 * [Application control](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/application-control)
 * [Automation stitches](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/139441/automation-stitches)
-* Integration into the [Fortinet security fabric](https://www.fortinet.com/solutions/enterprise-midsize-business/security-fabric).
+* [Fortinet security fabric integration](https://www.fortinet.com/solutions/enterprise-midsize-business/security-fabric).
 * [DoS Polices](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy)
 * [Session Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy) for distributing specific security processing like Antivirus to FortiGate cluster members in active-active HA
 * [Server Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/713497/virtual-server-load-balance)
