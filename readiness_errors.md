@@ -226,3 +226,8 @@ The vFSA private IP is not pingable.	Ensure the private IP allows icmp and try a
 {: #error-1156}
 
 Unable to retrieve vFSA information. Try again or contact IBM Support.
+
+## Error 1164
+{: #error-1164}
+
+The vFSA HA Cluster nodes are not in-sync. Contact IBM Support.
