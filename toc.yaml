@@ -15,7 +15,7 @@ toc:
        topics:
        - getting-started.md
        - about.md
-       - include: /FortiGate-10g/explore-firewalls.md
+       - include: ../fortigate-10g/explore-firewalls.md
        - topicgroup:
            label: Related links
            topics:
