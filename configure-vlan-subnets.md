@@ -174,5 +174,5 @@ end
 ## Next steps
 {: #configure-vlan-next-steps}
 
-Next, you will need to create firewall policies to allow traffic flows to these interfaces. Traffic is denied by default. For more information, refer to [Working with firewalls](/docs/vfsa?topic=vfsa-firewalls).
+Next, you will need to create firewall policies to allow traffic flows to these interfaces. Traffic is denied by default. For more information, refer to [Working with firewalls](/docs/vfsa?topic=vfsa-working-with-firewalls).
 

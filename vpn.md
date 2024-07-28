@@ -255,6 +255,6 @@ With AES-GCM as the encryption algorithm, you don't need to specify the authenti
 ## Additional VPN configurations
 {: #additional-vpn-configurations}
 
-To configure IPSec VPN, site to site, remote access VPN, and other features, refer to this [configuration guide](https://www.juniper.net/documentation/en_US/junos/information-products/pathway-pages/security/security-vpn-ipsec.pdf){: external} from Juniper.
+To configure IPSec VPN, site to site, remote access VPN, and other features, refer to this [configuration guide](https://www.juniper.net/documentation/us/en/software/junos/vpn-ipsec/vpn-ipsec.pdf){: external} from Juniper.
 
-For an example of how to configure a route-based site to site IPSec VPN, refer to this [configuration guide](https://www.juniper.net/documentation/en_US/junos/topics/example/ipsec-route-based-vpn-configuring.html){: external} from Juniper.
+For an example of how to configure a route-based site to site IPSec VPN, refer to this [configuration guide](https://www.juniper.net/documentation/us/en/software/junos/vpn-ipsec/topics/topic-map/security-route-based-ipsec-vpns.html#id-example-configuring-a-route-based-vpn){: external} from Juniper.

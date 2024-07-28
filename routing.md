@@ -72,4 +72,4 @@ In this example, BGP is configured for the following:
 * To peer with a neighbor that belongs to `AS 65002`
 * Peer neighbor IP `2.2.2.2`
 
-Additional configurations can be found on the [Juniper website](https://www.juniper.net/documentation/en_US/junos11.4/information-products/topic-collections/config-guide-routing/config-guide-routing.pdf){: external}.
+Additional configurations can be found on the [Juniper website](https://www.juniper.net/documentation/product/us/en/junos-os/){: external}.
