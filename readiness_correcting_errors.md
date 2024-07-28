@@ -28,7 +28,7 @@ There are two categories of connectivity errors that you might encounter when co
 
 Many of these errors result from the fact that the gateway actions being checked require root SSH access to the private IP address for either the host (Ubuntu) OS, or the gateway (vFSA). If an SSH connectivity check fails, then the action cannot proceed.
 
-   For more information about establishing an SSH session, see [Accessing the device using SSH](/docs/vfsa?topic=vfsa-performing-ibm-cloud-juniper-vfsa-basics#accessing-the-device-using-ssh). Note that for step 3, the example that is given is with the `admin` user. For a readiness check, substitute the `root` user for both the vFSA and the Hardware (host). Also, make sure that you use your private IP with this procedure, not your public IP.
+   For more information about establishing an SSH session, see [Accessing the device using SSH](/docs/vfsa?topic=vfsa-performing-ibm-cloud-fortinet-vfsa-basics#accessing-the-device-using-ssh). Note that for step 3, the example that is given is with the `admin` user. For a readiness check, substitute the `root` user for both the vFSA and the Hardware (host). Also, make sure that you use your private IP with this procedure, not your public IP.
    {: note}
 
 To validate connectivity, open an SSH session to either the Ubuntu host's or vFSA's private IP using the root credentials that are listed in the **Hardware** section (for an Ubuntu host) or the **vFSA** section (for the gateway) of the [Gateway Appliance Details](/docs/gateway-appliance?topic=gateway-appliance-viewing-gateway-appliance-details) page. Ensure that the SSH session can be established.

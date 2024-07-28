@@ -5,7 +5,7 @@ toc:
     category: network_classic
     audience: service
     href: /docs/vfsa
-    console-page: https://cloud.ibm.com/catalog/content/juniper-vfsa-catalog-deploy-1.4-dc1e707c-33dd-4321-b2a5-c22dbf0dd0ee-global
+    console-page: /catalog/content/juniper-vfsa-catalog-deploy-1.4-dc1e707c-33dd-4321-b2a5-c22dbf0dd0ee-global
     product-page: https://www.ibm.com/products/network-appliances
     path: vfsa
     label: IBM Cloud Virtual FortiGate Security Appliance
@@ -48,7 +48,6 @@ toc:
             topics:
             - vfsa-default-config.md
             - vfsa-import-and-export-config.md
-            - migrating-config.md
         - topicgroup:
             label: Performing vFSA advanced tasks
             topics:
@@ -61,7 +60,6 @@ toc:
             - system-logging.md
         - vfsa-upgrade.md
         - vfsa-license.md
-        - renew-license.md
         - os-reload.md
         - rebuild-cluster.md
     - navgroup:

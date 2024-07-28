@@ -30,7 +30,7 @@ Each system log message identifies the Junos OS process that generated the messa
 
 Table 1 lists the severity levels that you can specify in your configuration at the `edit system syslog` hierarchy level. Levels from `emergency` through `info` are in order from the highest severity (greatest effect on functioning) to the lowest.
 
-Unlike other severity levels, the `none` level disables logging of a facility instead of indicating the severity of a triggering event on routing functions. For more information, see [Disabling the system logging of a facility](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/system-logging-on-a-single-chassis-system.html#id-disabling-the-system-logging-of-a-facility){: external}.
+Unlike other severity levels, the `none` level disables logging of a facility instead of indicating the severity of a triggering event on routing functions. For more information, see [Disabling the system logging of a facility](https://www.juniper.net/documentation/us/en/software/junos/network-mgmt/topics/topic-map/system-logging-on-a-single-chassis-system.html#id-disabling-the-system-logging-of-a-facility){: external}.
 
 | Value	| Severity level | Description |
 | ------------- | ------------- | ------------- |
@@ -102,8 +102,8 @@ Security system logging traffic intended for remote servers is sent through the 
 ## Related links
 {: #logging-related-links}
 
-* [Overview of system logging](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/system-logging.html){: external}
-* [Configuring system logging for a security device](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/system-logging-for-a-security-device.html){: external}
+* [Overview of system logging](https://www.juniper.net/documentation/us/en/software/junos/network-mgmt/topics/topic-map/system-logging.html){: external}
+* [Configuring system logging for a security device](https://www.juniper.net/documentation/us/en/software/junos/network-mgmt/topics/topic-map/system-logging-for-a-security-device.html){: external}
 * [System Log Explorer](https://apps.juniper.net/syslog-explorer/){: external}
-* [Setting the system to stream security logs](https://www.juniper.net/documentation/en_US/junos/topics/task/configuration/security-system-stream-security-log-revenue-port-setting.html){: external}
-* [Configuring traffic logs](https://kb.juniper.net/InfoCenter/index?page=content&id=KB16509){: external}
+* [Setting the system to stream security logs](https://www.juniper.net/documentation/us/en/software/junos/network-mgmt/topics/topic-map/system-logging-for-a-security-device.html#id-understanding-stream-logging-for-security-devices){: external}
+* [Configuring traffic logs](https://supportportal.juniper.net/s/article/SRX-Getting-Started-Configure-Traffic-Logging-Security-Policy-Logs-for-SRX-Branch-Devices?language=en_US){: external}
