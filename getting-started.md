@@ -34,7 +34,7 @@ These features include:
 * [Application control](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/application-control)
 * [Automation stitches](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/139441/automation-stitches)
 * [Fortinet security fabric integration](https://www.fortinet.com/solutions/enterprise-midsize-business/security-fabric).
-* [DoS Polices](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy)
+* [DoS policies](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy)
 * [Session Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy) for distributing specific security processing like Antivirus to FortiGate cluster members in active-active HA
 * [Server Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/713497/virtual-server-load-balance)
 
@@ -92,7 +92,7 @@ To order your {{site.data.keyword.vfsa_full}}, follow these steps:
 
 1. From your browser, open the [Gateway Appliances page](/gen1/infrastructure/provision/gateway){: external} and log in to your account.
 
-   You can also get to this page by logging in to the [IBM Cloud console](/login){: external} and selecting **Classic Infrastructure > Network > Gateway appliance**. Alternatively, from the [IBM Cloud catalog](/catalog){: external}, select the **Network** category, then choose the **Gateway Appliance** tile.
+   You can also get to the page by logging in to the [IBM Cloud console](/login){: external} and selecting **Classic Infrastructure > Network > Gateway appliance**. Alternatively, from the [IBM Cloud catalog](/catalog){: external}, select the **Network** category, then choose the **Gateway Appliance** tile.
 
 1. Choose **Fortinet** under **Vendor**.
 1. Choose either **7.4.3 (up to 1 Gbps)** or **7.4.3 (up to 10 Gbps) under **Version**.
@@ -110,12 +110,12 @@ To order your {{site.data.keyword.vfsa_full}}, follow these steps:
 
 1. From the **Storage disks** section, choose the options that meet your storage requirements.
 
-   RAID configurations are available for customizing storage performance, size and data protection. RAID1 or RAID10 are recommended for a combination of data protection and performance. RAID0 provides the highest read/write performance with the least data protection. If you choose RAID0, ensure that you have a data backup plan, as one disk failure necessitates the complete rebuild of the RAID with new disks and the rebuilding and reloading of the appliance.
+   RAID configurations are available for customizing storage performance, size and data protection. RAID1 or RAID10 are recommended for a combination of data protection and performance. RAID0 provides the highest read/write performance with the least data protection. If you choose RAID0, ensure that you have a data backup plan, as one disk failure needs the complete rebuild of the RAID with new disks and the rebuilding and reloading of the appliance.
 
-   You can have up to four disks per vFSA. "Disk size" with a RAID configuration is the usable disk size, as RAID configurations for every type of RAID other than RAID0 will change the amount of storage available.
+   You can have up to four disks per vFSA. "Disk size" with a RAID configuration is the usable disk size, as RAID configurations for every type of RAID other than RAID0 changes the amount of storage available.
    {: note}
 
-1. All of the settings in the **Network interface** section should be preselected and are not modifiable. The vFSA supports only redundant public and private interfaces with a port speed that matches the **Version** specified earlier in the order form. "Private only" network interfaces are not supported.
+1. All settings in the **Network interface** section should be preselected and are not modifiable. The vFSA supports only redundant public and private interfaces with a port speed that matches the **Version that is specified** earlier in the order form. "Private only" network interfaces are not supported.
 1. Review your selections, check that you read the Third-Party Service Agreements, then click **Create**. The order is verified automatically.
 
 After your order is approved, the provisioning of your {{site.data.keyword.vfsa_full}} Gateway starts automatically. When the provisioning process is complete, the new vFSA appears in the Gateway Appliances list page. Click the gateway name to open the Gateway Details page. The IP addresses, login username, and password for the device appear.

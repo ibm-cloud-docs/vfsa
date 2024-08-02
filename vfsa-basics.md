@@ -20,24 +20,24 @@ subcollection: vfsa
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Performing additional vFSA tasks
+# Performing other vFSA tasks
 {: #performing-ibm-cloud-fortinet-vfsa-basics}
 
-You can configure and maintain your {{site.data.keyword.vfsa_full}} (vFSA) in a variety of ways, including using SSH to connect directly to the vFSA VM, logging into the vFSA web management GUI, or by using SSH to connect to the Ubuntu hypervisor and then initiating a KVM console session to the vFSA VM. 
+You can configure and maintain your {{site.data.keyword.vfsa_full}} (vFSA) in various ways, including using SSH to connect directly to the vFSA VM, logging in to the vFSA web management GUI, or by using SSH to connect to the Ubuntu hypervisor and then initiating a KVM console session to the vFSA VM. 
 {: shortdesc}
 
-You can also configure and manage multiple FortiGates at the same time using the [FortiManager](https://www.fortinet.com/products/management/fortimanager) appliance (virtual or hardware) or with other automation and orchestration tools, such as Ansible, that utilize the Fortinet API.
+You can also configure and manage multiple FortiGates at the same time using the [FortiManager](https://www.fortinet.com/products/management/fortimanager) appliance (virtual or hardware) or with other automation and orchestration tools, such as Ansible, that use the Fortinet API.
 
-By connecting your {{site.data.keyword.vfsa_full}} to a [FortiAnalyzer](https://www.fortinet.com/products/management/fortianalyzer) appliance (virtual or hardware), you can receive analytics, centralized logging, automation and visibility into all of your appliances and devices within the Fortinet Security Fabric.
+By connecting your {{site.data.keyword.vfsa_full}} to a [FortiAnalyzer](https://www.fortinet.com/products/management/fortianalyzer) appliance (virtual or hardware), you can receive analytics, centralized logging, automation, and visibility into all of your appliances and devices within the Fortinet Security Fabric.
 
 ## Accessing the device using SSH
 {: #accessing-the-device-using-ssh}
 
-By default the public interfaces of the vFSA are disabled. However, private interfaces allow connectivity to both the host and the VM. For more information refer to [Accessing your FortiGate Virtual Security Appliance](/docs/vfsa?topic=vfsa-vfsa-accessing).
+By default the public interfaces of the vFSA are disabled. However, private interfaces allow connectivity to both the host and the VM. For more information, refer to [Accessing your FortiGate Virtual Security Appliance](/docs/vfsa?topic=vfsa-vfsa-accessing).
 
 Once private network connectivity is setup:
 
-1. Go to Gateway Appliance Details page and retrieve the Private gateway IP.
+1. Go to the Gateway Appliance Details page and retrieve the Private gateway IP.
 
 1. Click the "eye" icon to reveal the admin user's password.
 
@@ -46,10 +46,10 @@ Once private network connectivity is setup:
    For the host (Ubuntu), use the `root` user ID and password. SSH to the Ubuntu host is only enabled on the private interface.
    {: note}
 
-If you do not see the "eye" icon, you might not have permission to view the password. Please check your access permissions with the account owner.
+If you do not see the "eye" icon, you might not have permission to view the password. Check your access permissions with the account owner.
 {: note}
 
-## vFSA command line basics
+## vFSA command-line basics
 {: #command-line-basics}
 
 The vFSA has a suite of CLI commands to configure firewall policies, routes, and all of the features that come with the product. More details can be found [here](https://docs.fortinet.com/document/FortiGate/7.4.1/administration-guide/896276/cli-basics){: external}.

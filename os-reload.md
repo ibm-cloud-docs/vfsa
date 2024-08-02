@@ -35,13 +35,13 @@ For vFSA, the OS reload process cannot be used to update the vFSA version. You m
 
 For a successful OS Reload on a vFSA, ensure the following:
 
-* IBM Cloud only allows an OS reload of the vFSA with a certified version. Certified versions can be found in [IBM Cloud Virtual FortiGate Security Appliance supported versions](/docs/vfsa?topic=vfsa-vfsa-versions). When you run an OS reload readiness check, the version running on the vFSA is detected and stored. If this detected version matches a version in the supported version's list, then the OS Reload action can be run. If the node fails the readiness check with a host connectivity issue (blocking the OS reload from proceeding), open a case with IBM Support to override the readiness check to allow the process to proceed.
+* IBM Cloud allows only an OS reload of the vFSA with a certified version. Certified versions can be found in [IBM Cloud Virtual FortiGate Security Appliance supported versions](/docs/vfsa?topic=vfsa-vfsa-versions). When you run an OS reload readiness check, the version running on the vFSA is detected and stored. If this detected version matches a version in the supported version's list, then the OS Reload action can be run. If the node fails the readiness check with a host connectivity issue (blocking the OS reload from proceeding), open a case with IBM Support to override the readiness check to allow the process to proceed.
 
 * Do not modify the vFSA configuration during the OS reload operation. For example, automated software agents attempting to modify one or both vFSA nodes. Configurations changes like these can corrupt the OS reload.
 
-* For HA deployments, the admin password for the provisioned vFSA gateway must match the admin password defined in the vFSA portal. The password in the portal was defined when you first provisioned the gateway, and it might not match the current gateway password. If so, use SSH to connect to the vFSA gateway and change the admin password to match. You can then proceed with the OS reload operation.
+* For HA deployments, the admin password for the provisioned vFSA gateway must match the admin password that is defined in the vFSA portal. The password in the portal was defined when you first provisioned the gateway, and it might not match the current gateway password. If so, use SSH to connect to the vFSA gateway and change the admin password to match. You can then proceed with the OS reload operation.
 
-* The vFSA configuration must allow admin SSH access to the vFSA private IP, prior to the OS reload request. This is required to rejoin the cluster. After the OS reload completes, if wanted, you can disable SSH access again.
+* The vFSA configuration must allow admin SSH access to the vFSA private IP, before the OS reload request. This is required to rejoin the cluster. After the OS reload completes, if wanted, you can disable SSH access again.
 
 * **Do NOT** perform an OS reload on both servers of the Highly Available gateway at the same time.
 
