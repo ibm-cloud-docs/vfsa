@@ -17,7 +17,7 @@ subcollection: vfsa
 {: help}
 {: support}
 
-This topic provides a sample configuration for sNAT on a vFSA appliance. With this configuration, a private node routed behind the gateway can communicate with the outside world.
+This topic provides a sample configuration for sNAT on a vFSA appliance. With this configuration, a private node that is routed behind the gateway can communicate with the outside world.
 {: shortdesc}
 
 ![Sample topology](images/Sample-Topology-SNAT.png "Sample topology"){: caption="Sample topology" caption-side="bottom"}

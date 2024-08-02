@@ -17,7 +17,7 @@ subcollection: vfsa
 {: help}
 {: support}
 
-You can initiate failover from your primary {{site.data.keyword.vfsa_full}} to a backup device, so that all control and data plane traffic is routed through the secondary gateway device after failover.
+You can initiate failover from your primary {{site.data.keyword.vfsa_full}} to a backup device so that all control and data plane traffic is routed through the secondary gateway device after failover.
 {: shortdesc}
 
 This section is only applicable if your Juniper vFSA gateway devices are provisioned in High-Availability mode.
@@ -33,7 +33,7 @@ To do so, follow these steps:
 
 1. On the primary vFSA gateway device, run the command `show chassis cluster status`.
 
-   The output should be similar to the following:
+   The output is similar to the following:
 
 	```text
 	Monitor Failure codes:
@@ -69,11 +69,11 @@ To do so, follow these steps:
 	request chassis cluster failover redundancy-group <redundancy group number> node <node number>
 	```
 
-	Select the appropriate redundancy group number and node number from the output of the command in step two. To failover both redundancy groups, execute the previous command twice, one for each group.
+	Select the appropriate redundancy group number and node number from the output of the command in step two. To failover both redundancy groups, run  the previous command twice, one for each group.
 
 1. After failover is complete, verify the console output. It should now be listed as `secondary`.
 
-1. Login to the other vFSA gateway of your pair. Enter into CLI mode by again executing the command `cli` and then verify that the console output shows as `primary`.
+1. Log in to the other vFSA gateway of your pair. Enter CLI mode by again running the command `cli` and then verify that the console output shows as `primary`.
 
 When you enter CLI mode in your Juniper vFSA gateway device, the output shows as `primary` from the control plane perspective. Always check the `show chassis cluster status` output to determine which gateway device is primary from data plane perspective. Refer to [vFSA Default Configuration](/docs/vfsa?topic=vfsa-understanding-the-vfsa-default-configuration) to learn more about redundancy groups, as well as the control and data planes.
 {: tip}

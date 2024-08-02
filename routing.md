@@ -40,7 +40,7 @@ set routing-options static route <PREFIX/MASK> next-hop <Gateway IP>
 ### Basic OSPF routing
 {: #basic-ospf-routing}
 
-To setup basic OSPF routing, only using area 0, run the following commands using md5 authentication:
+To set up basic OSPF routing that uses only area 0, run the following commands by using md5 authentication:
 
 ```sh
 set protocols ospf area 0 interface ge-0/0/1.0 authentication md5 0 key <KEY>
@@ -65,7 +65,7 @@ set protocols bgp group CUSTOMER peer-as 65002
 set protocols bgp group CUSTOMER neighbor 2.2.2.2
 ```
 
-In this example, BGP is configured for the following:
+In this example, BGP is configured:
 
 * To use source IP address of `1.1.1.1` to establish the session
 * To negotiate both ipv4 and ipv6 unicast families
