@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-09"
+lastupdated: "2024-08-02"
 
 keywords: firewalls, working, policy, policies, rules, zones, standalone, ha
 
@@ -31,13 +31,14 @@ To see the network address objects that correlate to the source and destination 
 To see the network address group that correlates to the source and destination addresses referenced in the table, run the command `show firewall addrgrp`.
 
 | Source Interface|Destination interface|Source address|Destination address|Services|
-| :---|:----:|:----:|:---:|---:| 
+| :---|:----:|:----:|:---:|---:|
 |`agg0` (private untagged)|`agg0`|`SL-PRIVATE` (service network)|`SL_PRIV_MGMT` (Private IP assigned to the vFSA cluster)|All|
 |`agg0` (private untagged)|`agg0`|`SL-PRIVATE` (service network)|`SERVICE` (Address group for service network)|All|
 |`agg1` (public untagged)|`agg1`|All| `SL_PUB_MGMT` (Public IP assigned to the vFSA cluster)|`PING`, `HTTPS`|
 {: caption="Table 1. Default firewall policies for vFSA" caption-side="bottom"}
 
 ## VLAN firewall policies
+{: #vlan-firewall-policies}
 
 The topic [Configuring your VLAN interfaces and subnets](/docs/vfsa?topic=vfsa-configure-vlan-subnets) discusses how to configure interfaces and subnets for the VLANs you are routing through the vFSA. Once you complete this configuration, you must also configure firewall policies to control the traffic flows on these interfaces. It is recommended that you wait to route the VLANs through the vFSA until you have configured the firewall policies. Otherwise, traffic will be denied by default if the VLAN routes through with no policies in place. The following example illustrates the requirements:
 
@@ -54,7 +55,7 @@ edit "VLAN_781"
     set mtu-override enable
     set interface "agg2"
     set vlanid 781
-next 
+next
 edit "VLAN_794"
     set vdom "root"
     set ip 10.9.23.65 255.255.255.192

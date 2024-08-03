@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-22"
+lastupdated: "2024-08-02"
 
 keywords: working, routing, static, default, creating, ospf, bgp
 
@@ -20,16 +20,18 @@ The Ubuntu hypervisor running KVM uses SR-IOV network interfaces to optimize net
 {{site.data.keyword.vfsa_full}} devices come with following default configuration:
 {: shortdesc}
 
-* SSH and Ping are permitted on both vFSA public and private gateway IP addresses
-* FortiGate Web Console (GUI) is permitted on HTTPS port 443 for both public and private gateway IP addresses
+* SSH and Ping are permitted on both vFSA public and private gateway IP addresses.
+* FortiGate Web Console (GUI) is permitted on HTTPS port 443 for both public and private gateway IP addresses.
 * Entries for the IBM service networks are predefined under `Policy & Objects > Addresses`. The following `Address Groups` and `IP Range/Subnet` entries represent these service networks:
-  * `SERVICE`
-  * `SL1` .. `SL20`
-  * `SL-PRIVATE`
-  * `SL-PUBLIC`
+
+   * `SERVICE`
+   * `SL1` .. `SL20`
+   * `SL-PRIVATE`
+   * `SL-PUBLIC`
+
 * Entries for the local interfaces: `SL-PRIV_MGMT` and `SL-PUB_MGMT` are predefined.
-* Access from the zone `SL-PRIVATE` to all services is provided by IBM and `Address Group` `SERVICE` is permitted
-* All other network accesses are denied
+* Access from the zone `SL-PRIVATE` to all services is provided by IBM and `Address Group` `SERVICE` is permitted.
+* All other network accesses are denied.
 
 For high availability vFSA configurations several aggregate interface groups are defined to support redundancy. The following table illustrates these groups:
 

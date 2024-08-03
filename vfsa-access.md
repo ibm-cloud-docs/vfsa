@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-03-05"
+lastupdated: "2024-08-02"
 
 keywords: vfsa, access
 
@@ -21,7 +21,7 @@ The public interfaces of the Ubuntu OS/hypervisor and the vFSA do not allow SSH 
 ## Private Interfaces
 {: #vfsa-private-interfaces}
 
-The vFSA Gateway Overview page provides details on the private interfaces of the Ubuntu OS/hypervisor (found in the Hardware pane, under Private IP) and the vFSA (found in the vFSA pane, under Private IP). By default, for the vFSA Private IP, SSH (TCP 22), Ping (ICMP), and the vFSA web GUI (TCP 443) are enabled. To access these interfaces you must have network connectivity to the private network. 
+The vFSA Gateway Overview page provides details on the private interfaces of the Ubuntu OS/hypervisor (found in the Hardware pane, under Private IP) and the vFSA (found in the vFSA pane, under Private IP). By default, for the vFSA Private IP, SSH (TCP 22), Ping (ICMP), and the vFSA web GUI (TCP 443) are enabled. To access these interfaces you must have network connectivity to the private network.
 
 The following sections detail ways you can gain access.
 
@@ -32,14 +32,14 @@ IBM Cloud Classic supports shared Virtual Private Networking (VPN) access to the
 
 The vFSA itself supports an on board enterprise level [SSL VPN](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/559546/ssl-vpn-full-tunnel-for-remote-user){: external} offering that uses FortiClient to connect to the FortiGate VPN endpoint. You can configure this to only access the FortiGate for management access. You can also customize this to allow users to connect to other servers and services both behind and in front of the FortiGate. All configurations require customizing the SSL VPN and the corresponding policies on the FortiGate.
 
-Other custom VPN options include using a classic Baremetal or VSI installed with OpenVPN, WireGuard, or other VPN software to provide an encrypted public access point into the IBM Cloud Classic private network. 
+Other custom VPN options include using a classic Baremetal or VSI installed with OpenVPN, WireGuard, or other VPN software to provide an encrypted public access point into the IBM Cloud Classic private network.
 
 ## Accessing the private interfaces with a bastion (jump) host
 {: #vfsa-bastion-host}
 
 IBM Cloud Classic accounts are generally VRF enabled. If your account is not VRF enabled, either make sure [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning) is enabled or refer to [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui) to enable VRF. VLAN spanning and VRF are two specific configurations for routing on an account level basis that allow private VLAN intercommunication.
 
-Once either VLAN spanning or VRF is enabled, the cloud resources (such as virtual servers) can connect to each other through their private network connectivity over different private subnets, private VLANs, across pods, and across different datacenters. A VSI with a public facing interface could provide a bridge to the private network, as well as provide access to the private interfaces of the vFSA and bare-metal hosts. You can configure a VSI for this using the VSI as a SOCKS proxy or by configuring the VSI with OpenVPN or WireGuard and using [private secondary subnets](/docs/subnets?topic=subnets-about-subnets-and-ips#static-subnets) as the address pools. 
+Once either VLAN spanning or VRF is enabled, the cloud resources (such as virtual servers) can connect to each other through their private network connectivity over different private subnets, private VLANs, across pods, and across different datacenters. A VSI with a public facing interface could provide a bridge to the private network, as well as provide access to the private interfaces of the vFSA and bare-metal hosts. You can configure a VSI for this using the VSI as a SOCKS proxy or by configuring the VSI with OpenVPN or WireGuard and using [private secondary subnets](/docs/subnets?topic=subnets-about-subnets-and-ips#static-subnets) as the address pools.
 
 For this particular custom VPN solution, it's important to statically route the secondary private subnets to the VSI's primary private IP.
 {: note}
@@ -47,27 +47,28 @@ For this particular custom VPN solution, it's important to statically route the 
 ## Using the Ubuntu hosts local console
 {: #vfsa-ubuntu-console}
 
-The vFSA runs as a Virtual Machine (VM) on the bare-metal Ubuntu host. You can access the VM using the local console of the Ubuntu host. This requires access to the Ubuntu host, which, by default, has SSH enabled only on the private network. 
+The vFSA runs as a Virtual Machine (VM) on the bare-metal Ubuntu host. You can access the VM using the local console of the Ubuntu host. This requires access to the Ubuntu host, which, by default, has SSH enabled only on the private network.
 
 To access the VM using the local console of the Ubuntu host, find the Qemu serial console port and then telnet to it:
 
-1) Find the VM Name or ID: 
+1. Find the VM Name or ID:
 
    `virsh list --all`.
-   
-2) Use the ID to dump the configuration in XML format and search for the console port: 
+
+1. Use the ID to dump the configuration in XML format and search for the console port:
 
    `virsh dumpxml <id> | grep service`
 
-For example:
-  ```
-  :~# virsh dumpxml 2 | grep service
-      <source mode='bind' host='127.0.0.1' service='8624' tls='no'/>
-      <source mode='bind' host='127.0.0.1' service='8624' tls='no'/>  
-  ```
-  {: pre}
-  
-3) Use telnet and the port number (from the example) to access the VM:
+   For example:
+
+     ```sh
+     :~# virsh dumpxml 2 | grep service
+         <source mode='bind' host='127.0.0.1' service='8624' tls='no'/>
+         <source mode='bind' host='127.0.0.1' service='8624' tls='no'/>
+     ```
+     {: pre}
+
+1. Use telnet and the port number (from the example) to access the VM:
 
    `telnet localhost 8624`
 
@@ -75,10 +76,11 @@ You can also run `ss -tlnp | grep qemu` to find the serial console port rather t
 {: note}
 
 ## Enable the public interfaces
+{: #enable-public-interfaces}
 
 While it is recommended that you keep your default settings, in order to disable management using public interfaces, it is possible to enable access if needed. The vFSA web GUI can be allowed on public in the `agg1` system interface configuration by adding `https` to the list of allowed services:
 
-```
+```sh
  edit "agg1"
         set vdom "root"
         set ip <public ip> 255.255.255.248
