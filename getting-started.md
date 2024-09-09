@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-03-05"
+lastupdated: "2024-09-09"
 
 keywords: ordering, gateway, appliance, vfsa, license
 
@@ -15,7 +15,7 @@ subcollection: vfsa
 # Getting started with IBM Cloud Virtual FortiGate Security Appliance
 {: #getting-started}
 
-{{site.data.keyword.vfsa_full}} allows you to route private and public network traffic selectively, through a full-featured, enterprise-level firewall that is powered by [FortiOS](https://www.fortinet.com/products/fortigate/fortios) software features and [FortiGuard AI-powered Security Services](https://www.fortinet.com/solutions/enterprise-midsize-business/security-as-a-service/fortiguard-subscriptions). 
+{{site.data.keyword.vfsa_full}} allows you to route private and public network traffic selectively, through a full-featured, enterprise-level firewall that is powered by [FortiOS](https://www.fortinet.com/products/fortigate/fortios) software features and [FortiGuard AI-powered Security Services](https://www.fortinet.com/solutions/enterprise-midsize-business/security-as-a-service/fortiguard-subscriptions).
 {: shortdesc}
 
 These features include:
