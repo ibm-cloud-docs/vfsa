@@ -16,7 +16,8 @@ toc:
        - getting-started.md
        - about.md
        - include: ../fortigate-10g/explore-firewalls.md
-       - include: ../gateway-appliance/ga-raci.md 
+       - include: ../gateway-appliance/ga-raci.md
+       - include: ../gateway-appliance/managing-permissions-and-device-access.md
        - topicgroup:
            label: Related links
            topics:
