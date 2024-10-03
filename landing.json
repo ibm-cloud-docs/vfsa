@@ -1,38 +1,42 @@
 {
-    "title": "Virtual FortiGate Security Appliance docs",
-    "lastupdated": "2024-08-28",
-    "introduction": "The IBM Cloud® Virtual FortiGate Security Appliance provides performance, ease of configuration, and maintenance advantages with the simplicity of running on a bare metal server.",
-    "section_recommended": [
+  "version": 2,
+  "title": "IBM Cloud Virtual FortiGate Security Appliance",
+  "introduction": "IBM Cloud® Virtual FortiGate Security Appliance allows you to route private and public network traffic selectively, through a full-featured, enterprise-level firewall that is powered by FortiOS software features and FortiGuard AI-powered Security Services.",
+  "product_page": "https://www.ibm.com/products/network-appliances",
+  "console_page": "/catalog/content/juniper-vfsa-catalog-deploy-1.4-dc1e707c-33dd-4321-b2a5-c22dbf0dd0ee-global",
+  "section_topics": {
+    "links": [
       {
         "title": "Getting started with IBM Cloud Virtual Fortigate Security Appliance",
-        "description": "IBM Cloud® Virtual FortiGate Security Appliance allows you to route private and public network traffic selectively, through a full-featured, enterprise-level firewall that is powered by FortiOS software features, such as full routing stacks, QoS and traffic sharing, policy-based routing, and VPN, IPS, and IDP.",
         "href": "/docs/vfsa?topic=vfsa-getting-started"
       },
       {
         "title": "Accessing your FortiGate Virtual Security Appliance",
-        "description": "The public interfaces of the Ubuntu hypervisor and the vFSA do not allow SSH access. Additionally, the vFSA web management console is disabled by default. You can use several different approaches to access these devices.",
         "href": "/docs/vfsa?topic=vfsa-vfsa-accessing"
       },
       {
         "title": "Managing VLANs with a gateway appliance",
-        "description": "By using a gateway appliance and the IBM Cloud console, you can manage your VLANs with several actions.",
         "href": "/docs/vfsa?topic=vfsa-managing-vlans-and-gateway-appliances"
       }
-    ],
-    "section_learn": {
-      "developer": "https://developer.ibm.com/depmodels/cloud/",
-      "architecture": "https://www.ibm.com/architectures/hybrid",
-      "training": "https://www.ibm.com/training/cloud",
-      "community": "https://community.ibm.com/community/user/cloud/home"
-    },
-    "section_updates": {
-      "view_more": "https://www.ibm.com/products/network-appliances",
-      "tiles": [
-        {
+    ]
+  },
+  "section_highlights": [
+    {
+      "title": "What is computer networking?",
+      "description": "Networking, or computer networking, is the process of connecting two or more computing devices, such as desktop computers, mobile devices, routers or applications, to enable the transmission and exchange of information and resources.",
+      "href": "https://www.ibm.com/topics/networking#toc-computer-n-9C7jokVu",
+      "type": "blog",
+      "recommended": true
+    }
+  ],
+  "section_updates": {
+    "view_more": "/docs/overview?topic=overview-whatsnew",
+    "tiles": [
+      {
           "date": "March 2024",
           "title": "Virtual FortiGate Security Appliance (vFSA)",
           "description": "General availability of the Virtual Fortigate Security Appliance on IBM Cloud."
         }
-      ]
-    }
+    ]
   }
+}
