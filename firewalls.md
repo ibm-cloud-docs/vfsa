@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-02"
+lastupdated: "2024-10-10"
 
 keywords: firewalls, working, policy, policies, rules, zones, standalone, ha
 
@@ -35,7 +35,7 @@ To see the network address group that correlates to the source and destination a
 |`agg0` (private untagged)|`agg0`|`SL-PRIVATE` (service network)|`SL_PRIV_MGMT` (Private IP assigned to the vFSA cluster)|All|
 |`agg0` (private untagged)|`agg0`|`SL-PRIVATE` (service network)|`SERVICE` (Address group for service network)|All|
 |`agg1` (public untagged)|`agg1`|All| `SL_PUB_MGMT` (Public IP assigned to the vFSA cluster)|`PING`, `HTTPS`|
-{: caption="Table 1. Default firewall policies for vFSA" caption-side="bottom"}
+{: caption="Default firewall policies for vFSA" caption-side="bottom"}
 
 ## VLAN firewall policies
 {: #vlan-firewall-policies}

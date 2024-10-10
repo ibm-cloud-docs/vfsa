@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-09"
+lastupdated: "2024-10-10"
 
 keywords: ordering, gateway, appliance, vfsa, license
 
@@ -79,7 +79,7 @@ Each license includes a different set of features and options, and the following
 |                                  | Security Fabric Rating and Compliance Monitoring |
 |                                  | FortiConverter Service                           |
 {: row-headers}
-{: caption="Table 1. vFSA License Entitlements" caption-side="bottom"}
+{: caption="vFSA License Entitlements" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the license name. The second column is a description of the features that the license enables for usage."}
 
 You can specify your license type when you order your vFSA and can also change the license by using the [Gateway Appliance Details](/docs/vfsa?topic=vfsa-vfsa-licenses#vfsa-licenses) page.
