@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-02"
+lastupdated: "2024-10-10"
 
 keywords: working, routing, static, default, creating, ospf, bgp
 
@@ -41,7 +41,7 @@ For high availability vFSA configurations several aggregate interface groups are
 | agg1   |  Aggregate interface for public control plane |
 | agg2   |  Aggregate interface for private data plane |
 | agg3   |  Aggregate interface for public data plane
-{: caption="Table 1. Aggregate Interfaces " caption-side="bottom"}
+{: caption="Aggregate Interfaces " caption-side="bottom"}
 
 For standalone vFSA configurations several aggregate interface groups are defined to support redundancy. The following table illustrates these groups:
 
@@ -49,7 +49,7 @@ For standalone vFSA configurations several aggregate interface groups are define
 | :---          |    :---         |
 | agg0   |  Aggregate interface for private control and data plane |
 | agg1   |  Aggregate interface for public control and data plane
-{: caption="Table 2. Aggregate Interfaces " caption-side="bottom"}
+{: caption="Aggregate Interfaces " caption-side="bottom"}
 
 Priority in the aggregate interfaces decides which vFSA node is active. By default, node 0 is active for both control plane and data plane.
 
@@ -58,7 +58,7 @@ Priority in the aggregate interfaces decides which vFSA node is active. By defau
 
 The following diagram illustrates the network interface topology on a highly available vFSA cluster. Redundancy is illustrated at each logical layer of the configuration. The bare-metal server has a 4 port network interface card that is connected to 2 private and 2 public switches, configured with LACP bonding to the Ubuntu host. These bonds are used for the control plane interfaces. Even though the SRIOV virtual functions bypass the bonds, they have redundant interfaces on each physical function to ensure redundancy on the data plane. The vFSA VM configuration uses aggregate interfaces to utilize this VF redundancy.
 
-![Highly available vFSA interfaces](images/vfsa-interfaces-ha-public.png "Highly available vFSA interfaces"){: caption="Figure 1. Highly available vFSA interfaces" caption-side="bottom"}
+![Highly available vFSA interfaces](images/vfsa-interfaces-ha-public.png "Highly available vFSA interfaces"){: caption="Highly available vFSA interfaces" caption-side="bottom"}
 
 The Ubuntu hypervisor running KVM uses SR-IOV network interfaces to optimize network performance. These interfaces are connected directly to the vFSA interfaces discussed previously, except where noted.
 {: note}
