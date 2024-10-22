@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-06"
+lastupdated: "2024-10-17"
 
 keywords: checking, readiness, errors
 
@@ -231,3 +231,8 @@ Unable to retrieve vFSA information. Try again or contact IBM Support.
 {: #error-1164}
 
 The vFSA HA Cluster nodes are not in-sync. Contact IBM Support.
+
+## Error 1166
+{: #error-1166}
+
+The gateway from the private subnet is not pingable from the vFSA Ubuntu host and/or from the vFSA node. Correct the networking and retry.
