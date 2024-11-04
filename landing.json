@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "IBM Cloud Virtual FortiGate Security Appliance",
-  "introduction": "IBM Cloud® Virtual FortiGate Security Appliance allows you to route private and public network traffic selectively, through a full-featured, enterprise-level firewall that is powered by FortiOS software features and FortiGuard AI-powered Security Services.",
+  "introduction": "IBM Cloud® Virtual FortiGate Security Appliance allows you to route private and public network traffic selectively, through a full-featured, enterprise-level firewall powered by FortiOS software and FortiGuard AI-powered Security Services.",
   "product_page": "https://www.ibm.com/products/network-appliances",
   "console_page": "/catalog/content/juniper-vfsa-catalog-deploy-1.4-dc1e707c-33dd-4321-b2a5-c22dbf0dd0ee-global",
   "section_topics": {
@@ -23,7 +23,7 @@
   "section_highlights": [
     {
       "title": "What is computer networking?",
-      "description": "Networking, or computer networking, is the process of connecting two or more computing devices, such as desktop computers, mobile devices, routers or applications, to enable the transmission and exchange of information and resources.",
+      "description": "Networking, or computer networking, is the process of connecting computing devices to enable the transmission and exchange of information and resources.",
       "href": "https://www.ibm.com/topics/networking#toc-computer-n-9C7jokVu",
       "type": "blog",
       "recommended": true
