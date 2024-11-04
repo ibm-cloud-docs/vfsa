@@ -23,7 +23,7 @@
   "section_highlights": [
     {
       "title": "What is computer networking?",
-      "description": "Networking, or computer networking, is the process of connecting computing devices to enable the transmission and exchange of information and resources.",
+      "description": "Computer networking is the process of connecting computing devices to enable the transmission and exchange of information and resources.",
       "href": "https://www.ibm.com/topics/networking#toc-computer-n-9C7jokVu",
       "type": "blog",
       "recommended": true
@@ -36,7 +36,7 @@
           "date": "March 2024",
           "title": "Virtual FortiGate Security Appliance (vFSA)",
           "description": "General availability of the Virtual Fortigate Security Appliance on IBM Cloud."
-        }
+      }
     ]
   }
 }
