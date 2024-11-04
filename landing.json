@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "IBM Cloud Virtual FortiGate Security Appliance",
-  "introduction": "IBM Cloud® Virtual FortiGate Security Appliance allows you to route private and public network traffic selectively, through a full-featured, enterprise-level firewall powered by FortiOS software and FortiGuard AI-powered Security Services.",
+  "introduction": "IBM Cloud Virtual FortiGate Security Appliance allows you to route private and public network traffic selectively, through a full-featured, enterprise-level firewall powered by FortiOS software and FortiGuard AI-powered Security Services.",
   "product_page": "https://www.ibm.com/products/network-appliances",
   "console_page": "/catalog/content/juniper-vfsa-catalog-deploy-1.4-dc1e707c-33dd-4321-b2a5-c22dbf0dd0ee-global",
   "section_topics": {
@@ -30,13 +30,13 @@
     }
   ],
   "section_updates": {
-    "view_more": "/docs/overview?topic=overview-whatsnew",
-    "tiles": [
-      {
+      "view_more": "/docs/vfsa?topic=vfsa-vfsa-release-notes",
+      "tiles": [
+        {
           "date": "March 2024",
           "title": "Virtual FortiGate Security Appliance (vFSA)",
           "description": "General availability of the Virtual Fortigate Security Appliance on IBM Cloud."
-      }
+        }
     ]
   }
 }
