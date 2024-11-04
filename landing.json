@@ -34,8 +34,7 @@
       "tiles": [
         {
           "date": "01 March 2024",
-          "title": "Virtual FortiGate Security Appliance (vFSA)",
-          "description": "General availability of the Virtual Fortigate Security Appliance on IBM Cloud."
+          "title": "General availability of the Virtual Fortigate Security Appliance on IBM Cloud"
         }
     ]
   }
