@@ -55,9 +55,6 @@ toc:
             topics:
             - firewalls.md
             - nat.md
-            - failover.md
-            - routing.md
-            - vpn.md
             - securing-host.md
             - system-logging.md
         - vfsa-upgrade.md
