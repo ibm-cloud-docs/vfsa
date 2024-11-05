@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-11-05"
 
 keywords: checking, readiness, errors
 
@@ -236,3 +236,8 @@ The vFSA HA Cluster nodes are not in-sync. Contact IBM Support.
 {: #error-1166}
 
 The gateway from the private subnet is not pingable from the vFSA Ubuntu host and/or from the vFSA node. Correct the networking and retry.
+
+## Error 1168
+{: #error-1168}
+
+The Ubuntu server is running in rescue mode. Exit rescue mode and retry. 
