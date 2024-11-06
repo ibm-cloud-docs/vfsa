@@ -56,7 +56,6 @@ toc:
             - firewalls.md
             - nat.md
             - securing-host.md
-            - system-logging.md
         - vfsa-upgrade.md
         - vfsa-license.md
         - os-reload.md
