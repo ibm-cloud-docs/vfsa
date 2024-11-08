@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-11-08"
 
 keywords: ordering, gateway, appliance, vfsa, license
 
@@ -92,7 +92,7 @@ To order your {{site.data.keyword.vfsa_full}}, follow these steps:
 
 1. From your browser, open the [Gateway Appliances page](/gen1/infrastructure/provision/gateway){: external} and log in to your account.
 
-   You can also get to the page by logging in to the [IBM Cloud console](/login){: external} and selecting **Classic Infrastructure > Network > Gateway appliance**. Alternatively, from the [IBM Cloud catalog](/catalog){: external}, select the **Network** category, then choose the **Gateway Appliance** tile.
+   You can also get to the page by logging in to the [IBM Cloud console](/login){: external} and selecting **Infrastructure > Classic Infrastructure**. Then choose **Network > Gateway appliance**. Alternatively, from the [IBM Cloud catalog](/catalog){: external}, select the **Network** category, then choose the **Gateway Appliance** tile.
 
 1. Choose **Fortinet** under **Vendor**.
 1. Choose either **7.4.3 (up to 1 Gbps)** or **7.4.3 (up to 10 Gbps) under **Version**.
