@@ -58,7 +58,8 @@ toc:
             - securing-host.md
         - vfsa-upgrade.md
         - vfsa-license.md
-        - os-reload.md
+        - topic: os-reload.md
+          navtitle: Reloading the OS
         - rebuild-cluster.md
     - navgroup:
         id: reference
