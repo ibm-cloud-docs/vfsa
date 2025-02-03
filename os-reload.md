@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-01-22"
+  years: 2025
+lastupdated: "2025-02-03"
 
 keywords: reloading, os, upgrading, kvm, ha, standalone
 
@@ -12,7 +12,7 @@ subcollection: vfsa
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Reloading the OS
+# Reloading the OS for {{site.data.keyword.vfsa_short}}
 {: #reloading-the-os}
 {: help}
 {: support}
