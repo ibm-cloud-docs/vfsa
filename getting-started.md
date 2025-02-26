@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-08"
+  years: 2025
+lastupdated: "2025-02-26"
 
 keywords: ordering, gateway, appliance, vfsa, license
 
@@ -50,7 +50,7 @@ There are three license types available for your {{site.data.keyword.vfsa_full}}
 * Unified Threat Management (UTM)
 * Enterprise
 
-Each license includes a different set of features and options, and the following table outlines the differences.
+Each license includes a different set of features and options, as shown on the [FortiGate Security Bundles page](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/fortigate-security-bundles). The following table outlines the differences:
 
 | License Name                     | Features/Security Services                       |
 |----------------------------------|--------------------------------------------------|
@@ -78,9 +78,13 @@ Each license includes a different set of features and options, and the following
 |                                  | OT Protocol Service                              |
 |                                  | Security Fabric Rating and Compliance Monitoring |
 |                                  | FortiConverter Service                           |
+|                                  | AI-based Inline Malware Prevention (with limits) |
 {: row-headers}
 {: caption="vFSA License Entitlements" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the license name. The second column is a description of the features that the license enables for usage."}
+
+AI-based Inline Malware Prevention comes with the Enterprise license bundle. It can be configured and used, as well as log. However, accessing FortiGate Cloud/FortiCloud is not available due to the fact that the license belongs to the IBM Fortinet account.
+{: note}
 
 You can specify your license type when you order your vFSA and can also change the license by using the [Gateway Appliance Details](/docs/vfsa?topic=vfsa-vfsa-licenses#vfsa-licenses) page.
 {: note}
