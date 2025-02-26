@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-05"
+  years: 2025
+lastupdated: "2025-02-26"
 
 keywords: checking, readiness, errors
 
@@ -241,3 +241,8 @@ The gateway from the private subnet is not pingable from the vFSA Ubuntu host an
 {: #error-1168}
 
 The Ubuntu server is running in rescue mode. Exit rescue mode and retry. 
+
+## Warning 1186
+{: #warning-1186}
+
+The expected OS version for the member does not match the actual OS version detected on the server. Perform an OS Reload to the expected OS version to ensure the server OS is compatible with the Gateway version.
