@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-10"
+  years: 2025
+lastupdated: "2025-03-14"
 
 keywords: working, routing, static, default, creating, ospf, bgp
 
@@ -338,7 +338,7 @@ The following table illustrates network interface definitions for the previous c
 | port3      | Gigabit ethernet interface for SL-PRIVATE transit VLAN and Customer VLAN | agg0 |
 | port4      | Gigabit ethernet interface for SL-PUBLIC transit VLAN and Customer VLAN | agg1 |
 | port5      | Gigabit ethernet interface for SL-PUBLIC transit VLAN and Customer VLAN | agg1 |
-{: caption="Table 3: Configuration information" caption-side="bottom"}
+{: caption="Configuration information" caption-side="bottom"}
 
 ## Default Configuration of a sample 10G HA Public and Private vFSA Gateway
 {: #default-configuration-of-a-sample-highly-available-ha-vfsa-gateway}
@@ -658,4 +658,4 @@ The information in the following table represents the configuration above:
 | port8      | Gigabit ethernet interface for Private Customer VLAN | agg2 |
 | port9      | Gigabit ethernet interface for Public Customer VLAN | agg3 |
 | port10      | Gigabit ethernet interface for Public Customer VLAN | agg3 |
-{: caption="Table 4: Configuration information" caption-side="bottom"}
+{: caption="Configuration information" caption-side="bottom"}
