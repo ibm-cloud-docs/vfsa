@@ -1,18 +1,10 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-03-05"
+  years: 2025
+lastupdated: "2025-03-14"
 
 keywords: working, routing, static, default, creating, ospf, bgp
-
-subcollection: vfsa
-
----
-
-{{site.data.keyword.attribute-definition-list}}
-
-keywords: basics, performing, accessing, ssh, device, gateway, configuration, mode, juniper, ui, dns, htp, password
 
 subcollection: vfsa
 
