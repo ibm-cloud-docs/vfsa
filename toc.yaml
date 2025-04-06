@@ -23,7 +23,7 @@ toc:
            topics:
            - link:
                label: "What is network security?"
-               href: https://www.ibm.com/topics/networking
+               href: https://www.ibm.com/think/topics/networking
        - release-notes.md
     - navgroup:
         id: howto
