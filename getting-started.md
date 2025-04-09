@@ -13,7 +13,7 @@ subcollection: vfsa
 {{site.data.keyword.attribute-definition-list}}
 
 # Getting started with IBM Cloud Virtual FortiGate Security Appliance
-{: #getting-started}
+{: #getting-started-vfsa}
 
 {{site.data.keyword.vfsa_full}} allows you to route private and public network traffic selectively, through a full-featured, enterprise-level firewall that is powered by [FortiOS](https://www.fortinet.com/products/fortigate/fortios) software features and [FortiGuard AI-powered Security Services](https://www.fortinet.com/solutions/enterprise-midsize-business/security-as-a-service/fortiguard-subscriptions).
 {: shortdesc}
@@ -90,7 +90,7 @@ You can specify your license type when you order your vFSA and can also change t
 {: note}
 
 ## Ordering a vFSA
-{: #ordering-with-a-linked-account}
+{: #ordering-vfsa-with-a-linked-account}
 
 To order your {{site.data.keyword.vfsa_full}}, follow these steps:
 
