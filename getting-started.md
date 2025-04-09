@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-04-09"
 
 keywords: ordering, gateway, appliance, vfsa, license
 
@@ -42,7 +42,7 @@ For a list of known limitations with {{site.data.keyword.vfsa_full}}, see [Known
 {: note}
 
 ## Choosing a vFSA license
-{: #choosing-license}
+{: #choosing-vfsa-license}
 
 There are three license types available for your {{site.data.keyword.vfsa_full}}:
 
