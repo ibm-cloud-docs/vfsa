@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-01-22"
+  years: 2025
+lastupdated: "2025-04-10"
 
 keywords: license, viewing, changing
 
@@ -21,7 +21,7 @@ The vFSA has three available licenses:
 * Unified Threat Management (UTM)
 * Enterprise
 
-For information on the features offered with these licenses, refer to [Choosing a vFSA License](/docs/vfsa?topic=vfsa-getting-started#choosing-license).
+For information on the features offered with these licenses, refer to [Choosing a vFSA License](/docs/vfsa?topic=vfsa-getting-started#choosing-vfsa-license).
 
 To view your current license, follow these steps:
 
