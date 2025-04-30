@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-03"
+lastupdated: "2025-04-30"
 
 keywords: reloading, os, upgrading, kvm, ha, standalone
 
@@ -66,7 +66,7 @@ To reload your OS, follow these steps:
 1. Click the server that you want to reload.
 1. Click the server name in the Hardware section.
 1. Select **OS Reload** from the **Actions** menu on the upper right of the page.
-1. In the **OS Reload** screen, click **Edit** for the Category that requires an update. Select **Juniper** as the Vendor, and the OS version you want to reload.
+1. In the **OS Reload** screen, click **Edit** for the Category that requires an update. Select **Fortinet** as the Vendor, and the OS version you want to reload.
 1. Click the **Reload Above Configuration** button to proceed to the **Review** window. Click **Cancel** to cancel the changes to the device and exit the screen.
 1. Verify that all details in the **New Configuration** section are correct. Click **Next** to advance to the Confirm window.
 1. Click the **Confirm OS Reload** button to confirm and initiate the OS Reload. Or, click **Cancel** to cancel the action.
