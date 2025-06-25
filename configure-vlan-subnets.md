@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-03-25"
+  years: 2025
+lastupdated: "2025-06-25"
 
 keywords: VLANs, subnets, vFSA, configure
 
@@ -53,8 +53,6 @@ set ip 10.37.22.1 255.255.255.192
 set allowaccess ping
 set role lan
 set interface "agg2"
-set mtu-override enable
-set mtu 9000
 set vlanid 798
 end
 ```
@@ -121,8 +119,6 @@ set ip 10.37.22.1 255.255.255.192
 set allowaccess ping
 set role lan
 set interface "agg0"
-set mtu-override enable
-set mtu 9000
 set vlanid 798
 end
 ```
@@ -175,4 +171,3 @@ end
 {: #configure-vlan-next-steps}
 
 Next, you need to create firewall policies to allow traffic flows to these interfaces. Traffic is denied by default. For more information, refer to [Working with firewalls](/docs/vfsa?topic=vfsa-working-with-firewalls).
-
