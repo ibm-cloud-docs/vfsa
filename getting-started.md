@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-08-22"
 
 keywords: ordering, gateway, appliance, vfsa, license
 
@@ -20,25 +20,25 @@ subcollection: vfsa
 
 These features include:
 
-* [Firewall policies](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/656084/firewall-policy)
-* [Dynamic routing protocols](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/479509/dynamic-routing)
-* [Intrusion Prevention Service (IPS)](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/intrusion-prevention)
-* [Deep packet and SSL Inspection (DPI)](https://www.fortinet.com/resources/cyberglossary/dpi-deep-packet-inspection)
-* [Anti-malware and antivirus support](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/antivirus)
-* [DNS filtering](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/dns-security)
-* [Web filtering](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/web-filtering)
-* [Web Application Firewall (WAF)](https://www.fortinet.com/products/web-application-firewall/fortiweb/what-is-waf)
-* [SSL-VPN](https://www.fortinet.com/resources/cyberglossary/ssl-vpn)
-* [IPSec VPN](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/520377/ipsec-vpns)
-* [SD-WAN](https://www.fortinet.com/resources/cyberglossary/sd-wan-explained) and [ECMP](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/25967/equal-cost-multi-path)
-* [Application control](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/application-control)
-* [Automation stitches](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/139441/automation-stitches)
-* [Fortinet security fabric integration](https://www.fortinet.com/solutions/enterprise-midsize-business/security-fabric).
-* [DoS policies](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy)
-* [Session Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy) for distributing specific security processing like Antivirus to FortiGate cluster members in active-active HA
-* [Server Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/713497/virtual-server-load-balance)
+* [Firewall policies](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/656084/firewall-policy){: external}
+* [Dynamic routing protocols](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/479509/dynamic-routing){: external}
+* [Intrusion Prevention Service (IPS)](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/intrusion-prevention){: external}
+* [Deep packet and SSL Inspection (DPI)](https://www.fortinet.com/resources/cyberglossary/dpi-deep-packet-inspection){: external}
+* [Anti-malware and antivirus support](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/antivirus){: external}
+* [DNS filtering](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/dns-security){: external}
+* [Web filtering](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/web-filtering){: external}
+* [Web Application Firewall (WAF)](https://www.fortinet.com/products/web-application-firewall/fortiweb){: external}
+* [SSL-VPN](https://www.fortinet.com/resources/cyberglossary/ssl-vpn){: external}
+* [IPSec VPN](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/520377/ipsec-vpns){: external}
+* [SD-WAN](https://www.fortinet.com/resources/cyberglossary/sd-wan-explained) and [ECMP](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/25967/equal-cost-multi-path){: external}
+* [Application control](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/application-control){: external}
+* [Automation stitches](https://docs.fortinet.com/document/FortiGate/7.4.3/administration-guide/139441/automation-stitches){: external}
+* [Fortinet security fabric integration](https://www.fortinet.com/solutions/enterprise-midsize-business/security-fabric){: external}
+* [DoS policies](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy){: external}
+* [Session Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/771644/dos-policy){: external} for distributing specific security processing like Antivirus to FortiGate cluster members in active-active HA
+* [Server Load Balancing](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/713497/virtual-server-load-balance){: external}
 
-For a list of known limitations with {{site.data.keyword.vfsa_full}}, see [Known limitations](/docs/vfsa?topic=vfsa-known-limitations-for-ibm-cloud-vfsa).
+For a list of known limitations with {{site.data.keyword.vfsa_full}}, see [Known limitations](/docs/vfsa?topic=vfsa-known-limitations-for-ibm-cloud-vfsa){: external}.
 {: note}
 
 ## Choosing a vFSA license
@@ -50,7 +50,7 @@ There are three license types available for your {{site.data.keyword.vfsa_full}}
 * Unified Threat Management (UTM)
 * Enterprise
 
-Each license includes a different set of features and options, as shown on the [FortiGate Security Bundles page](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/fortigate-security-bundles). The following table outlines the differences:
+Each license includes a different set of features and options, as shown on the [FortiGate Security Bundles page](https://www.fortinet.com/support/support-services/fortiguard-security-subscriptions/fortigate-security-bundles){: external}. The following table outlines the differences:
 
 | License Name                     | Features/Security Services                       |
 |----------------------------------|--------------------------------------------------|
