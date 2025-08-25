@@ -33,6 +33,6 @@ To view your current license, follow these steps:
 To change your current license, you must also perform the follow steps:
 
 1. Run a [Readiness check](/docs/vfsa?topic=vfsa-vfsa-readiness) for “License upgrade” and address any errors that are found.
-1. After the readiness update check is complete, the Readiness check section shows a **Ready** status for the License update and renewal.
+1. After the readiness update check for the license update and renewal is complete, the Readiness check section shows a **Ready** status.
 1. In the Details section, click **Update License** for the license you want to change.
 1. Select your new license type, then click **Submit**.
