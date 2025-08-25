@@ -30,7 +30,7 @@ To view your current license, follow these steps:
 1. Choose **Network > Gateway Appliances**.
 1. Click the Gateway Appliance Name to access the Gateway Appliance Details page.
 
-To change your current license, you must also perform the follow steps:
+To change your current license, you must also perform the following steps:
 
 1. Run a [Readiness check](/docs/vfsa?topic=vfsa-vfsa-readiness) for “License upgrade” and address any errors that are found.
 1. After the readiness update check for the license update and renewal is complete, the Readiness check section shows a **Ready** status.
