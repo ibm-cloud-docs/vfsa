@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-10"
+lastupdated: "2025-08-25"
 
 keywords: license, viewing, changing
 
@@ -33,5 +33,6 @@ To view your current license, follow these steps:
 To change your current license, you must also perform the follow steps:
 
 1. Run a [Readiness check](/docs/vfsa?topic=vfsa-vfsa-readiness) for “License upgrade” and address any errors that are found.
-1. Click the Edit icon ![Edit icon](../../icons/edit-tagging.svg)  next to your current license to edit it.
-1. Select your new license type, then click **Save**.
+1. After the readiness update check is complete, the Readiness check section shows a **Ready** status for the License update and renewal.
+1. In the Details section, click **Update License** for the license you want to change.
+1. Select your new license type, then click **Submit**.
