@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-12"
+lastupdated: "2025-09-08"
 
 keywords: version, base version, release notes, juniper
 
@@ -22,6 +22,7 @@ You can click on the **Version information** link for each entry to get more det
 
 | Base version | Release version | Hypervisor | Release date | Version information |
 | --- | --- | --- | --- | --- |
+| 7.4.8 | v7.4.8 build2795 | Ubuntu 22.04 with KVM | Sept 8, 2025 | [More information](https://docs.fortinet.com/document/fortigate/7.4.8/fortios-release-notes/760203/introduction-and-supported-models){: external} |
 | 7.6.2 | v7.6.2 build3462 | Ubuntu 22.04 with KVM | March 12, 2025 | [More information](https://docs.fortinet.com/document/fortigate/7.6.2/fortios-release-notes/760203){: external} |
 | 7.6.1 | v7.6.1 build3457 | Ubuntu 22.04 with KVM | Feb 3, 2025 | [More information](https://docs.fortinet.com/document/fortigate/7.6.1/fortios-release-notes/760203/introduction-and-supported-models){: external} |
 | 7.6.0 | v7.6.0 build3401 | Ubuntu 20.04 with KVM | Sept 5, 2024 | [More information](https://docs.fortinet.com/document/fortigate/7.6.0/fortios-release-notes/760203/introduction-and-supported-models){: external} |
