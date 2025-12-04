@@ -10,62 +10,62 @@ toc:
     path: vfsa
     label: IBM Cloud Virtual FortiGate Security Appliance
   entries:
-    - navgroup:
-       id: learn
-       topics:
-       - getting-started.md
-       - about.md
-       - include: ../fortigate-10g/explore-firewalls.md
-       - include: ../gateway-appliance/ga-raci.md
-       - include: ../gateway-appliance/managing-permissions-and-device-access.md
-       - topicgroup:
-           label: Related links
-           topics:
-           - link:
-               label: "What is network security?"
-               href: https://www.ibm.com/think/topics/networking
-       - release-notes.md
-    - navgroup:
-        id: howto
-        topics:
-        - topicgroup:
-            label: Performing vFSA basics
-            topics:
-            - vfsa-access.md
-            - include: ../gateway-appliance/access-gateway-appliances.md
-            - include: ../gateway-appliance/access-gateway-details.md
-            - include: ../gateway-appliance/rename-gateway.md
-            - include: ../gateway-appliance/cancel-gateway.md
-            - vfsa-basics.md
-            - configure-vlan-subnets.md
-        - topicgroup:
-            label: Checking vFSA readiness
-            topics:
-            - readiness.md
-            - readiness_errors.md
-            - readiness_correcting_errors.md
-        - include: ../gateway-appliance/manage-vlans.md
-        - topicgroup:
-            label: Working with the vFSA default configuration
-            topics:
-            - vfsa-default-config.md
-            - vfsa-import-and-export-config.md
-        - topicgroup:
-            label: Performing vFSA advanced tasks
-            topics:
-            - firewalls.md
-            - nat.md
-            - securing-host.md
-        - vfsa-upgrade.md
-        - vfsa-license.md
-        - topic: os-reload.md
-          navtitle: Reloading the OS
-        - rebuild-cluster.md
-    - navgroup:
-        id: reference
-        topics:
-        - vfsa-version-notes.md
-    - navgroup:
-        id: help
-        topics:
-        - known-limitations.md
+  - navgroup:
+      id: learn
+      topics:
+      - getting-started.md
+      - about.md
+      - include: ../fortigate-10g/explore-firewalls.md
+      - include: ../gateway-appliance/ga-raci.md
+      - include: ../gateway-appliance/managing-permissions-and-device-access.md
+      - topicgroup:
+          label: Related links
+          topics:
+          - link:
+              label: "What is network security?"
+              href: https://www.ibm.com/think/topics/networking
+      - release-notes.md
+  - navgroup:
+      id: howto
+      topics:
+      - topicgroup:
+          label: Performing vFSA basics
+          topics:
+          - vfsa-access.md
+          - include: ../gateway-appliance/access-gateway-appliances.md
+          - include: ../gateway-appliance/access-gateway-details.md
+          - include: ../gateway-appliance/rename-gateway.md
+          - include: ../gateway-appliance/cancel-gateway.md
+          - vfsa-basics.md
+          - configure-vlan-subnets.md
+      - topicgroup:
+          label: Checking vFSA readiness
+          topics:
+          - readiness.md
+          - readiness_errors.md
+          - readiness_correcting_errors.md
+      - include: ../gateway-appliance/manage-vlans.md
+      - topicgroup:
+          label: Working with the vFSA default configuration
+          topics:
+          - vfsa-default-config.md
+          - vfsa-import-and-export-config.md
+      - topicgroup:
+          label: Performing vFSA advanced tasks
+          topics:
+          - firewalls.md
+          - nat.md
+          - securing-host.md
+      - vfsa-upgrade.md
+      - vfsa-license.md
+      - topic: os-reload.md
+        navtitle: Reloading the OS
+      - rebuild-cluster.md
+  - navgroup:
+      id: reference
+      topics:
+      - vfsa-version-notes.md
+  - navgroup:
+      id: help
+      topics:
+      - known-limitations.md
