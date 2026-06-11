@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-01-22"
+  years: 2026
+lastupdated: "2026-06-11"
 
 keywords: reloading, os, upgrading, kvm, ha, standalone
 
@@ -40,3 +40,38 @@ Currently, there are several additional considerations to be aware of:
    - Moving from one bare-metal server processor to another is not supported.
    - Moving between different bandwidth speeds (1 Gbps and 10 Gbps) is not supported.
    - Moving between Stand-alone and High Availability configurations is not supported.
+
+## Ubuntu hypervisor upgrade considerations
+{: #ubuntu-hypervisor-upgrade-considerations}
+
+The vFSA runs as a VM on a Ubuntu hypervisor. Generally, this hypervisor operating system is reloaded as part of a vFSA update.  However, there are times where only the Ubuntu hypervisor requires maintenance, such as applying kernel updates, security patches, or vulnerability fixes, without upgrading the vSRX virtual machine itself. 
+
+In these cases, the standard `apt update` command is typically sufficient with some important caveats that you must be aware of. Upgrading only the Ubuntu hypervisor is generally considered a safe maintenance operation and can usually be performed with minimal disruption to running vSRX VMs. Most package updates, including standard user-space libraries and utilities, don't require interruption of guest VM operations.
+
+However, administrators must carefully review the packages included in an upgrade before proceeding. Certain updates can affect the stability or connectivity of running virtual machines until the hypervisor is rebooted. 
+
+The following types of updates require special attention:
+
+- Kernel packages
+- `systemd` and `udev` updates
+- `libvirt` packages
+- Networking-related packages such as `nftables`, bridges, or other virtualization networking components
+- `qemu` and `kvm` package updates
+
+
+In some cases, when you upgrade virtualization or network-related packages while keeping VMs active can result in degraded VM networking, stalled interfaces, or an inconsistent `libvirt` state until the hypervisor node is restarted. A restart of the Ubuntu hypervisor typically restores normal operation.
+
+When performing an `apt upgrade` on the hypervisor, consider the following recommendations:
+
+- Review pending packages before applying updates.
+- Schedule a maintenance window if kernel, `libvirt`, or networking components are being upgraded.
+- Plan for a hypervisor reboot when required.
+- Avoid performing simultaneous maintenance on multiple HA nodes when possible.
+
+Example:
+
+```sh
+apt update
+apt list --upgradable
+apt upgrade
+```
