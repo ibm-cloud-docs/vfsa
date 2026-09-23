@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-06-25"
+  years: 2026
+lastupdated: "2026-09-23"
 
 keywords: VLANs, subnets, vFSA, configure
 
@@ -36,14 +36,15 @@ You can directly configure your public VLANs, private VLANs, and subnet gateway 
 
 For HA clusters on the vFSA, 4 aggregate interfaces are configured during provisioning:
 
-* `Agg0` is the outside private WAN interface. 
-* `Agg1` is the outside public WAN interface. 
-* `Agg2` is the inside private interface. 
-* `Agg3` is the inside public interface. 
+* `Agg0` is the outside private WAN interface.
+* `Agg1` is the outside public WAN interface.
+* `Agg2` is the inside private interface.
+* `Agg3` is the inside public interface.
 
-Ensure that you configure any private VLANs with `agg2` as the parent interface. Also configure any public VLANs with `agg3` defined as the parent interface. 
+Ensure that you configure any private VLANs with `agg2` as the parent interface. Also, configure any public VLANs with `agg3` defined as the parent interface.
+{: important}
 
-The following example illustrates the CLI configuration of private VLAN 798, which has a subnet of `10.37.22.0/26`. The subnet gateway for that subnet is `10.37.22.1`, and the subnet mask is `255.255.255.192`. The following example labels the interface using the VLAN number, `b` for backend (private), and `inside`, defining it as an inside VLAN. The `set allowaccess` command allows for control plane protection and stipulates which control/management plane level services that 10.37.22.1/32 can be used for on the FortiGate. In addition, only `ping` is set, as the subnet gateway IP is almost never used for management access to the FortiGate. However, if you want to access the FortiGate using that IP, you can add services (such as SSH or HTTPS) for remote CLI and web GUI access respectively. 
+The following example illustrates the CLI configuration of private VLAN 798, which has a subnet of `10.37.22.0/26`. The subnet gateway for that subnet is `10.37.22.1`, and the subnet mask is `255.255.255.192`. The following example labels the interface using the VLAN number, `b` for backend (private), and `inside`, defining it as an inside VLAN. The `set allowaccess` command allows for control plane protection and stipulates which control/management plane level services that 10.37.22.1/32 can be used for on the FortiGate. In addition, only `ping` is set, as the subnet gateway IP is almost never used for management access to the FortiGate. However, if you want to access the FortiGate using that IP, you can add services (such as SSH or HTTPS) for remote CLI and web GUI access respectively.
 
 ```sh
 config system interface
