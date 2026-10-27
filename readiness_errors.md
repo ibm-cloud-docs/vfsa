@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-02-26"
+  years: 2026
+lastupdated: "2026-10-27"
 
 keywords: checking, readiness, errors
 
@@ -165,7 +165,7 @@ The vFSA node's VM is running but the node is not accessible via telnet. Exit fr
 ## Error 1120
 {: #error-1120}
 
-The vFSA node does not have a valid license. Remove any evaluation licenses and apply a valid license. Then retry the operation. 
+The vFSA node does not have a valid license. Remove any evaluation licenses and apply a valid license. Then retry the operation.
 
 ## Error 1127
 {: #error-1127}
@@ -215,7 +215,7 @@ Unable to detect the vFSA build version.	Try again or contact IBM Support.
 ## Error 1153
 {: #error-1153}
 
-The detected vFSA build version is not supported by the IBM vFSA automation. Use the native vFSA upgrade/downgrade tool to load a supported version and retry. 
+The detected vFSA build version is not supported by the IBM vFSA automation. Use the native vFSA upgrade/downgrade tool to load a supported version and retry.
 
 ## Error 1155
 {: #error-1155}
@@ -240,7 +240,32 @@ The gateway from the private subnet is not pingable from the vFSA Ubuntu host an
 ## Error 1168
 {: #error-1168}
 
-The Ubuntu server is running in rescue mode. Exit rescue mode and retry. 
+The Ubuntu server is running in rescue mode. Exit rescue mode and retry.
+
+## Error 1170
+{: #error-1170}
+
+The Ubuntu host does not have at least 15 GB of memory available to each NUMA node. Ensure that the host meets this memory requirement and retry.
+
+## Error 1171
+{: #error-1171}
+
+The Ubuntu host has an unsupported network adapter. The required adapter uses the i40e driver. Replace the unsupported adapter and retry.
+
+## Error 1172
+{: #error-1172}
+
+The vFSA admin password stored in IMS does not match the password configured on the vFSA node. Update the password stored in IMS to match the active vFSA password and retry the operation.
+
+## Error 1173
+{: #error-1173}
+
+The vFSA admin password does not meet the complexity requirements introduced in version 7.6.6+. Update the password on the vFSA and in IMS to meet the requirements (minimum length 12, at least one uppercase letter, lowercase letter, special character, and number) and retry.
+
+## Error 1174
+{: #error-1174}
+
+The vFSA admin password in the import settings YAML file does not meet the complexity requirements for version 7.6.6+ deployments (minimum length 12, at least one uppercase letter, lowercase letter, special character, and number). Update the password and retry.
 
 ## Warning 1186
 {: #warning-1186}
