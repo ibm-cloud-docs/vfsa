@@ -30,12 +30,12 @@
     }
   ],
   "section_updates": {
-      "view_more": "/docs/vfsa?topic=vfsa-vfsa-release-notes",
-      "tiles": [
-        {
-          "date": "01 March 2024",
-          "title": "General availability of the Virtual Fortigate Security Appliance on IBM Cloud"
-        }
+    "view_more": "/docs/vfsa?topic=vfsa-vfsa-release-notes",
+    "tiles": [
+      {
+        "date": "01 March 2024",
+        "title": "General availability of the Virtual Fortigate Security Appliance on IBM Cloud"
+      }
     ]
   }
 }
