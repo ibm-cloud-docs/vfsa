@@ -17,6 +17,10 @@
       {
         "title": "Managing VLANs with a gateway appliance",
         "href": "/docs/vfsa?topic=vfsa-managing-vlans-and-gateway-appliances"
+      },
+      {
+        "title": "Migrate from FortiGate Security Appliance 10G to vFSA",
+        "href": "/docs/vfsa?topic=vfsa-fsa-to-vfsa-migration"
       }
     ]
   },
@@ -30,12 +34,12 @@
     }
   ],
   "section_updates": {
-      "view_more": "/docs/vfsa?topic=vfsa-vfsa-release-notes",
-      "tiles": [
-        {
-          "date": "01 March 2024",
-          "title": "General availability of the Virtual Fortigate Security Appliance on IBM Cloud"
-        }
+    "view_more": "/docs/vfsa?topic=vfsa-vfsa-release-notes",
+    "tiles": [
+      {
+        "date": "01 March 2024",
+        "title": "General availability of the Virtual Fortigate Security Appliance on IBM Cloud"
+      }
     ]
   }
 }

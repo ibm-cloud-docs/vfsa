@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-04-30"
+  years: 2026
+lastupdated: "2026-10-29"
 
 keywords: reloading, os, upgrading, kvm, ha, standalone
 
@@ -17,7 +17,7 @@ subcollection: vfsa
 {: help}
 {: support}
 
-The OS reload process is used to rebuild a {{site.data.keyword.vfsa_full}} (vFSA) server. This might be necessary in the case of a disk failure, bad configuration of the vFSA node requiring a rebuild, chassis swap, or any other event that requires a rebuild of the server.
+The OS reload process is used to rebuild an {{site.data.keyword.vfsa_full}} (vFSA) server. This might be necessary in the case of a disk failure, bad configuration of the vFSA node requiring a rebuild, chassis swap, or any other event that requires a rebuild of the server.
 {: shortdesc}
 
 The process typically performs the following actions:
@@ -45,7 +45,7 @@ For a successful OS Reload on a vFSA, ensure the following:
 
 * **Do NOT** perform an OS reload on both servers of the Highly Available gateway at the same time.
 
-   Performing an OS reload on both servers of the HA gateway at the same time destroys the vFSA cluster and causes the gateway to be out of service. If the vFSA cluster is destroyed, you must use the [Rebuild cluster](/docs/vfsa?topic=vfsa-rebuilding-an-ha-cluster) option to reprovision the vFSA and re-create the HA cluster. 
+   Performing an OS reload on both servers of the HA gateway at the same time destroys the vFSA cluster and causes the gateway to be out of service. If the vFSA cluster is destroyed, you must use the [Rebuild cluster](/docs/vfsa?topic=vfsa-rebuilding-an-ha-cluster) option to reprovision the vFSA and re-create the HA cluster.
    {: important}
 
 * The IPMI interface for the bare-metal server must be enabled or the following error is issued:
