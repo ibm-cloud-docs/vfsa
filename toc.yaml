@@ -26,6 +26,10 @@ toc:
               href: https://www.ibm.com/think/topics/networking
       - release-notes.md
   - navgroup:
+      id: tutorial
+      topics:
+      - fsa-to-vfsa-migration.md
+  - navgroup:
       id: howto
       topics:
       - topicgroup:

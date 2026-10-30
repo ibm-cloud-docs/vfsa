@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-23"
+lastupdated: "2026-10-30"
 
 keywords: VLANs, subnets, vFSA, configure
 
@@ -24,7 +24,7 @@ You will first need to validate that your VLAN is eligible to be protected by th
 
 Second, for each VLAN, you need to gather the VLAN number. For each subnet on each VLAN, you also need to gather their subnet gateway IP and subnet mask.
 
-A list of [subnets](https://cloud.ibm.com/networking/subnets){: external} as well as the [VLANs](https://cloud.ibm.com/networking/vlans){: external} on your account can be found in the IBM Cloud console. Clicking your subnets in the console displays its extended information, including the subnet gateway IP and the subnet mask. In addition, the VLAN's fully qualified name includes information on which "Pod" the VLAN is in.
+A list of [subnets](/networking/subnets){: external} as well as the [VLANs](/networking/vlans){: external} on your account can be found in the IBM Cloud console. Clicking your subnets in the console displays its extended information, including the subnet gateway IP and the subnet mask. In addition, the VLAN's fully qualified name includes information on which "Pod" the VLAN is in.
 
 ## VLAN and subnet gateway configuration for an HA vFSA cluster
 {: #ha-config}
