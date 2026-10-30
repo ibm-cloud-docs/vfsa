@@ -333,7 +333,7 @@ If the source FSA uses interface-bound firewall policies, strongly consider conv
 | Inside/public customer VLANs | agg1 |
 {: caption="Standalone vFSA interface map" caption-side="bottom"}
 
-The [vFSA VLAN and subnet configuration documentation are](/docs/vfsa?topic=vfsa-configure-vlan-subnets) the authoritative reference for the target interface mapping.
+The [vFSA VLAN and subnet configuration documentation](/docs/vfsa?topic=vfsa-configure-vlan-subnets) is the authoritative reference for the target interface mapping.
 
 ### Example 1: Private VLAN interface on HA vFSA
 {: #fsa-to-vfsa-private-vlan-example}
