@@ -27,17 +27,17 @@ This is not an in-place conversion. Each VLAN must be routed away from the FSA a
 ## Overview
 {: #fsa-to-vfsa-migration-overview}
 
-Use this tutorial to migrate Classic IaaS workloads from a physical FortiGate Security Appliance (FSA) 10G or FortiGate 1500DT to the Classic IBM Cloud Virtual FortiGate Security Appliance (vFSA). The goal is to ensure minimal disruption, maintain rollback capability, and preserve existing network behavior.
+Use this tutorial to migrate Classic IaaS workloads from a physical FortiGate Security Appliance (FSA) 10G or FortiGate 1500DT to the Classic IBM Cloud Virtual FortiGate Security Appliance (vFSA). The goal is to help ensure minimal disruption, maintain rollback capability, and preserve existing network behavior.
 
 The migration pattern is:
 
 1. Inventory the FSA and the protected Classic VLANs.
 1. Order a correctly sized vFSA in the same pod as the VLANs to be protected.
 1. Inventory and plan the cutover of any customer-managed connectivity that terminates on, peers with, or routes through the FSA: IPsec tunnels, GRE tunnels, BGP neighbors, static and dynamic routes, and paths used for Direct Link on Classic, Direct Link, Transit Gateway, on-premises, or other hybrid-cloud connectivity.
-1. Build equivalent FortiOS configuration on the vFSA, with interface names remapped to the vFSA aggregate layout.
+1. Build an equivalent FortiOS configuration on the vFSA, with interface names remapped to the vFSA aggregate layout.
 1. In a change window, move each VLAN from FSA route-through to vFSA route-through.
 1. Validate traffic, VPNs, NAT, routing, logging, management, and every hybrid-connectivity adjacency.
-1. Keep rollback ready until the customer signs off.
+1. Keep the rollback ready until the customer signs off.
 
 ## Audience
 {: #fsa-to-vfsa-audience}
@@ -60,8 +60,8 @@ Review these constraints before planning the migration. Violations require redes
 | One gateway association per VLAN | An FSA 10G and a network gateway cannot be associated with the same customer VLAN. Plan cutover as: remove/route-around from FSA, then associate/route-through to vFSA. |
 | vFSA high availability (HA) or standalone is chosen at order time | Standalone-to-HA and HA-to-standalone conversions are not supported. Order the target shape correctly. |
 | vFSA 1G/10G is chosen at order time | 1G-to-10G and 10G-to-1G conversions are not supported. Order the target speed correctly. |
-| vFSA is delivered on the provisioned FortiOS version, then customer-upgradable | The FortiOS version is set when the vFSA is provisioned and delivered. After provisioning, the customer can update FortiOS to the latest supported version from the FortiGate web UI. Do not import a configuration that requires unsupported FortiOS behavior before the target is upgraded and validated. |
-| Interface names and layout differ | Do not restore the whole FSA configuration blindly. Migrate objects and policy intent, then remap interfaces to vFSA aggregates. Prefer zone-based firewall policy on the target if the customer is not already using it, because zones make interface remapping easier than binding policy directly to physical or VLAN interfaces. |
+| vFSA is delivered on the provisioned FortiOS version, then customer-upgradeable | The FortiOS version is set when the vFSA is provisioned and delivered. After provisioning, the customer can update FortiOS to the latest supported version from the FortiGate web UI. Do not import a configuration that requires unsupported FortiOS behavior before the target is upgraded and validated. |
+| Interface names and layout differ | Do not restore the whole FSA configuration blindly. Migrate objects and policy intent, then remap interfaces to vFSA aggregates. Prefer zone-based firewall policy on the target if the customer is not already using it because zones make interface remapping easier than binding policy directly to physical or VLAN interfaces. |
 | Traffic is denied by default | Firewall policies must be configured on the vFSA after VLAN interfaces are configured. |
 {: caption="Hard constraints for FSA to vFSA migration" caption-side="bottom"}
 
@@ -71,8 +71,8 @@ Review these constraints before planning the migration. Violations require redes
 **Customer owns:**
 - Business approval and maintenance window
 - Application owner validation
-- FortiOS policy intent: firewall rules, NAT, VPNs, routing, certificates, logging, unified threat management (UTM) and FortiGuard features
-- Any secrets needed to recreate VPNs, API integrations, TACACS/RADIUS, syslog, SNMPv3, or certificates
+- FortiOS policy intent: firewall rules, NAT, VPNs, routing, certificates, logging, unified threat management (UTM), and FortiGuard features
+- Any secrets needed to re-create VPNs, API integrations, TACACS/RADIUS, syslog, SNMPv3, or certificates
 
 **IBM Cloud Security Support owns or assists with:**
 - Confirming product/pod limitations
@@ -102,7 +102,7 @@ Collect the following inputs before opening the change window:
 | Traffic matrix | Critical flows, source/destination, ports, expected NAT, expected route, validation owner. |
 | Hybrid connectivity dependencies | IPsec tunnels, GRE tunnels, BGP neighbors, static routes, Direct Link on Classic, Direct Link, Transit Gateway, on-premises peers, and other cloud/provider connectivity paths that terminate on, peer with, or route through this FortiGate. |
 | External dependencies | Monitoring sources, syslog/FortiAnalyzer, TACACS/RADIUS, automation/API clients. |
-| Rollback decision point | Who can call rollback, by what time, and what test failure triggers it. |
+| Rollback decision point | Who can call the rollback, by what time, and what test failure triggers it. |
 {: caption="Required inputs before migration" caption-side="bottom"}
 
 ## Before you begin
@@ -112,7 +112,7 @@ Ensure the following are in place before starting:
 
 - Change window approved
 - Access to current firewall configuration
-- New firewall appliance available in the same pod and location
+- Confirmation that the protected VLANs and the target vFSA are in the same pod and location
 - Validation that IP and VLAN reuse is permitted
 
 ## Decide whether vFSA is a valid target
@@ -122,10 +122,10 @@ Ensure the following are in place before starting:
 To decide whether vFSA is a valid target, complete the following steps:
 
 1. Confirm every VLAN that must move is in the same pod as the intended vFSA.
-1. Confirm that the required vFSA topology (HA vs. standalone) and link speed (1G vs. 10G) are finalized, as these cannot be changed after provisioning.
-1. Confirm no requirement depends on physical FSA-only hardware behavior or FortiOS features unavailable on IBM-certified vFSA versions.
-1. Confirm expected throughput, inspection, VPN, and logging needs fit the ordered vFSA size.
-1. Confirm the customer can tolerate per-VLAN route-through changes during maintenance.
+1. Confirm that the required vFSA topology (HA versus standalone) and link speed (1G versus 10G) are finalized, as these cannot be changed after provisioning.
+1. Confirm that no requirement depends on physical FSA-only hardware behavior or FortiOS features unavailable on IBM-certified vFSA versions.
+1. Confirm expected throughput, inspection, VPN, and logging needs fit the planned vFSA size.
+1. Confirm that the customer can tolerate per-VLAN route-through changes during maintenance.
 1. If the FSA is part of customer/user-managed hybrid connectivity, document every IPsec tunnel, GRE tunnel, BGP neighbor, static route, Direct Link on Classic, Direct Link, Transit Gateway, on-premises, and other hybrid-cloud dependency before cutover.
 1. For each hybrid connectivity dependency, define the target vFSA source interface/IP, peer change requirements, BGP autonomous system number (ASN) and session settings, route advertisements, expected outage/convergence behavior, validation test, and rollback action.
 
@@ -150,7 +150,7 @@ Determine the physical and logical location of the current firewall appliance, i
 - Data center / location
 - VLAN and subnet associations
 
-This ensures the replacement device is provisioned in an equivalent environment.
+This ensures that the replacement device is provisioned in an equivalent environment.
 
 ### Inventory and back up the source FSA
 {: #fsa-to-vfsa-step-2-inventory}
@@ -241,8 +241,34 @@ Examine the current firewall configuration to identify any dependencies on gatew
 
 **Outcomes:**
 
-- **If gateway IPs are in use:** Document each dependency in the hybrid connectivity planning table and resolve it before proceeding. Peer-side changes are the customer's responsibility.
-- **If gateway IPs are not in use:** Proceed with migration planning and review the [Static Subnet Configuration](/docs/vfsa?topic=vfsa-configure-vlan-subnets) documentation to confirm proper routing behavior.
+- **If gateway IPs are in use:** Document each dependency in the hybrid connectivity planning table and resolve it before proceeding. Peer-side changes are the customer's responsibility. To avoid coordinating every peer during the change window, see [Move gateway IP dependencies to a static subnet](#fsa-to-vfsa-static-subnet).
+- **If gateway IPs are not in use:** Proceed with migration planning and review [Configuring your VLAN interfaces and subnets](/docs/vfsa?topic=vfsa-configure-vlan-subnets) to confirm proper routing behavior.
+
+### Move gateway IP dependencies to a static subnet
+{: #fsa-to-vfsa-static-subnet}
+
+The gateway IP addresses of a Classic gateway device can't be moved to a different device. These two gateway IPs, one public and one private, are different from the subnet gateway IPs that you configure on VLAN interfaces. They are tied to the gateway object, not to the hardware. When you associate and route a VLAN to a gateway, the subnets on that VLAN are statically routed to the gateway IP. If you delete the old gateway, its IP addresses are released. When you migrate from an FSA to a vFSA, the vFSA receives different gateway IPs.
+
+Services that use the gateway IPs as endpoints, such as IPsec tunnels and BGP neighbors, are affected. If you have only one or two peers, you can update them during the change window. If you have five or more, it can be impractical to schedule all of the peer owners for the same change window. You also can't migrate some peers now and the rest later.
+
+To avoid this problem, move these endpoints to a static subnet before the change window. A static subnet is routed to the gateway IP, and you can reroute it to the new gateway during cutover.
+
+Complete the following steps before the change window:
+
+1. Identify all services that use the FSA gateway IP addresses as endpoints. IPsec tunnels and BGP neighbors are the most common, but verify whether other services also use them.
+1. [Order a static subnet](/docs/subnets?topic=subnets-order-subnets). When you are prompted for the IP address to route the subnet to, enter the public or private gateway IP of the FSA, depending on whether you ordered a public or private subnet.
+1. After the subnet is provisioned, configure IP addresses from the subnet on the FSA interfaces. Use a public subnet for public endpoints and a private subnet for private endpoints.
+1. Contact each remote location and ask them to change the peer IP address that they use to an IP address from the new static subnet. Services now use the static subnet IPs instead of the gateway IPs.
+1. On the vFSA, configure each service exactly as it is configured on the FSA, by using the same static subnet IPs. Because the subnet is still routed to the FSA, these services are configured but can't communicate until you reroute the subnet. Place the subnet IPs on the vFSA interfaces that match the traffic class in the [vFSA interface map](#fsa-to-vfsa-interface-map).
+
+During the change window, complete the following steps:
+
+1. [Reroute the static subnet](/docs/subnets?topic=subnets-re-routing-secondary-subnets) to the vFSA. Traffic for the subnet starts to flow to the vFSA. If the vFSA is configured correctly, BGP adjusts routes and IPsec tunnels are reestablished.
+1. Detach the VLANs from the FSA and route them to the vFSA, as described in [Execute the VLAN cutover](#fsa-to-vfsa-step-6).
+1. Test everything to verify that it works.
+
+Static subnet IPs are routed to a gateway IP, so they remain valid across the cutover. Coordinate with each peer only once before the change window.
+{: note}
 
 ## Order and prepare the target vFSA
 {: #fsa-to-vfsa-step-3}
@@ -264,19 +290,19 @@ Complete the following preparation steps:
    - Same physical or logical location, data center, and pod as the VLANs to protect
    - Compatible throughput and feature set
    - Public/private redundant interfaces as provided by the order form
-2. Wait for provisioning to complete.
-3. Record target details: gateway ID, delivered FortiOS version, license state, management URL/IP, HA state, and transit VLANs.
-4. After the vFSA is provisioned, update FortiOS to the latest supported version through the FortiGate web UI, unless there is an approved reason to stay on the delivered version.
-5. Back up the delivered configuration before and after the FortiOS update.
-6. Run the [vFSA readiness check](/docs/vfsa?topic=vfsa-vfsa-readiness) in the IBM Cloud console for supported actions and resolve any Not Ready state before migration.
-7. Confirm FortiOS access with least-privilege accounts.
-8. Configure baseline management controls:
+1. Wait for provisioning to complete.
+1. Record target details: gateway ID, delivered FortiOS version, license state, management URL/IP, HA state, and transit VLANs.
+1. After the vFSA is provisioned, update FortiOS to the latest supported version through the FortiGate web UI, unless there is an approved reason to stay on the delivered version.
+1. Back up the delivered configuration before and after the FortiOS update.
+1. Run the [vFSA readiness check](/docs/vfsa?topic=vfsa-vfsa-readiness) in the IBM Cloud console for supported actions and resolve any Not Ready state before migration.
+1. Confirm FortiOS access with least-privilege accounts.
+1. Configure baseline management controls:
    - Admin accounts and TACACS or RADIUS
    - Trusted hosts, if used
    - Logging, syslog, and FortiAnalyzer
    - SNMPv3, if used
    - NTP, DNS, and FortiGuard reachability
-9. Back up the fresh vFSA configuration before making migration changes.
+1. Back up the fresh vFSA configuration before making migration changes.
 
 ## Translate the FSA configuration to vFSA interfaces
 {: #fsa-to-vfsa-step-4}
@@ -307,7 +333,7 @@ If the source FSA uses interface-bound firewall policies, strongly consider conv
 | Inside/public customer VLANs | agg1 |
 {: caption="Standalone vFSA interface map" caption-side="bottom"}
 
-The [vFSA VLAN and subnet configuration documentation](/docs/subnets?topic=subnets-re-routing-secondary-subnets) is the authoritative reference for the target interface mapping.
+The [vFSA VLAN and subnet configuration documentation are](/docs/vfsa?topic=vfsa-configure-vlan-subnets) the authoritative reference for the target interface mapping.
 
 ### Example 1: Private VLAN interface on HA vFSA
 {: #fsa-to-vfsa-private-vlan-example}
@@ -361,15 +387,15 @@ end
 ### Configuration recreation order
 {: #fsa-to-vfsa-config-order}
 
-After interfaces exist, recreate or import in this order:
+After interfaces exist, re-create or import in this order:
 
 1. Address/service objects and groups.
-2. Static routes and dynamic routing base configuration, with interfaces remapped.
-3. IP pools, VIPs, central SNAT, and NAT settings.
-4. Firewall policies, with interfaces/zones remapped.
-5. VPN phase 1 and phase 2, with PSKs/certs entered securely by the customer.
-6. Logging, SNMP, automation/API access, and admin auth.
-7. FortiGuard/UTM profiles only after license and service reachability are confirmed.
+1. Static routes and dynamic routing base configuration, with interfaces remapped.
+1. IP pools, VIPs, central SNAT, and NAT settings.
+1. Firewall policies, with interfaces/zones remapped.
+1. VPN phase 1 and phase 2, with PSKs/certs entered securely by the customer.
+1. Logging, SNMP, automation/API access, and admin auth.
+1. FortiGuard/UTM profiles only after license and service reachability are confirmed.
 
 ## Validate the vFSA before cutover
 {: #fsa-to-vfsa-step-5}
@@ -401,7 +427,7 @@ Verify the following expected results before proceeding:
 | Policies | Every critical flow has a target policy with the correct NAT behavior. |
 | Routes | Static/dynamic route configuration references target interfaces and expected next hops. |
 | VPNs | Configuration staged, but peers might remain down until route-through/DNS/peer changes happen. |
-| Logging | Logs visible locally and sent to the configured external destination if used. |
+| Logging | Logs are visible locally and sent to the configured external destination if used. |
 {: caption="Pre-cutover validation expected results" caption-side="bottom"}
 
 ## Execute the VLAN cutover
@@ -453,7 +479,7 @@ diagnose debug flow filter clear
 
 Confirm the following after each VLAN batch:
 
-- Confirm traffic is flowing through the new firewall.
+- Confirm that traffic is flowing through the new firewall.
 - Verify connectivity for critical workloads.
 - Validate routing, VPNs, and any dependent services.
 
@@ -505,7 +531,7 @@ To roll back a failed VLAN batch:
    - Detach (route around) the VLAN from the new firewall.
    - Disassociate the VLAN from the vFSA if required.
 1. In the IBM Cloud console for the **FSA**:
-   - Reattach (re-associate) the VLAN to the original firewall.
+   - Reattach (reassociate) the VLAN to the original firewall.
    - Route the VLAN through the FSA.
 1. Restore any static routing changes, if applicable.
 1. Validate the same tests against the original path.
@@ -515,7 +541,7 @@ To roll back a failed VLAN batch:
 This process effectively reverses the migration and restores the previous state.
 
 **Rollback triggers:**
-- Critical application test fails and cannot be fixed inside the window.
+- A critical application test fails and cannot be fixed inside the window.
 - VPN/BGP adjacency fails and blocks production traffic.
 - NAT/VIP behavior differs from the approved traffic matrix.
 - Unexpected broad deny/drop behavior appears in FortiOS flow debug.
@@ -529,7 +555,7 @@ Use the following templates and checklists to document the migration, communicat
 ### Evidence template
 {: #fsa-to-vfsa-evidence-template}
 
-Attach sanitized final evidence to the case using the following template.
+Attach sanitized final evidence to the case by using the following template.
 
 ```text
 Migration: FSA 10G / FortiGate 1500DT to vFSA
@@ -579,37 +605,37 @@ Issues / follow-up:
 
 **Escalate to platform/network underlay owners when:**
 - The vFSA readiness check is Not Ready or Incomplete and remediation is not obvious.
-- The vFSA host, hypervisor, disk, aggregate interface, or HA dataplane appears unhealthy.
-- Portal route-through/route-around state does not match dataplane behavior.
+- The vFSA host, hypervisor, disk, aggregate interface, or HA data plane appears unhealthy.
+- Portal route-through/route-around state does not match data plane behavior.
 - VLANs are not in the expected pod or cannot be associated/routed as designed.
 
 **Escalate to customer/application owner when:**
 - Approved traffic matrix is incomplete.
 - A business test fails but FortiOS/network evidence shows expected policy behavior.
-- The maintenance window must be extended or rollback decision is needed.
+- The maintenance window must be extended or a rollback decision is needed.
 
 ### Final checklist
 {: #fsa-to-vfsa-checklist}
 
 - [ ] Target vFSA ordered with correct HA/standalone and 1G/10G shape.
-- [ ] Target vFSA in same pod as protected VLANs.
-- [ ] Target vFSA updated from the delivered FortiOS version to the latest supported version through the FortiGate web UI, unless an exception is documented.
-- [ ] Source FSA configuration backed up and sanitized inventory complete.
-- [ ] vFSA readiness check passed or exceptions documented.
+- [ ] Target vFSA in the same pod as protected VLANs.
+- [ ] Target vFSA is updated from the delivered FortiOS version to the latest supported version through the FortiGate web UI, unless an exception is documented.
+- [ ] Source FSA configuration that is backed up and sanitized inventory complete.
+- [ ] vFSA readiness checks passed or exceptions that are documented.
 - [ ] VLAN interfaces and subnet gateway IPs configured on vFSA before route-through.
-- [ ] Zone-based firewall policy considered or implemented on the vFSA target design.
+- [ ] Zone-based firewall policies considered or implemented on the vFSA target design.
 - [ ] Policies/NAT/VIPs/routes/VPNs remapped to vFSA interfaces.
 - [ ] Customer traffic matrix approved.
 - [ ] Rollback plan approved and old FSA left intact.
 - [ ] VLAN cutover completed in portal.
 - [ ] Post-cutover tests passed.
 - [ ] vFSA configuration backed up after migration.
-- [ ] Old FSA retained through the agreed monitoring period and canceled only after explicit approval.
+- [ ] The old FSA retained through the agreed monitoring period and canceled only after explicit approval.
 
 ## Summary
 {: #fsa-to-vfsa-summary}
 
-You migrated your Classic FortiGate Security Appliance 10G to a Classic vFSA. You built the vFSA in parallel, recreated the approved FortiOS configuration with the vFSA interface layout, and moved the protected VLANs in batches during the change window. You validated traffic, VPNs, NAT, routing, and logging after each batch, and you kept the rollback procedure available until sign-off.
+You migrated your Classic FortiGate Security Appliance 10G to a Classic vFSA. You built the vFSA in parallel, re-created the approved FortiOS configuration with the vFSA interface layout, and moved the protected VLANs in batches during the change window. You validated traffic, VPNs, NAT, routing, and logging after each batch, and you kept the rollback procedure available until sign-off.
 
 Keep the old FSA through the agreed monitoring period. Cancel it only after the customer gives explicit approval.
 
@@ -620,5 +646,5 @@ Keep the old FSA through the agreed monitoring period. Cancel it only after the 
 - [Understanding the vFSA default configuration](/docs/vfsa?topic=vfsa-understanding-the-vfsa-default-configuration)
 - [Importing and exporting a vFSA configuration](/docs/vfsa?topic=vfsa-importing-exporting-vfsa-configuration)
 - [Known limitations](/docs/vfsa?topic=vfsa-known-limitations-for-ibm-cloud-vfsa)
-- [About IBM Cloud Virtual FortiGate Security Appliance](/docs/fortigate-10g?topic=fortigate-10g-about-fortigate-security-appliance-10gbps)
+- [About FortiGate Security Appliance 10 Gbps](/docs/fortigate-10g?topic=fortigate-10g-about-fortigate-security-appliance-10gbps)
 - [Updating the FSA 10 Gbps firmware](/docs/fortigate-10g?topic=fortigate-10g-updating-fsa-10g)
