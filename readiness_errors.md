@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-27"
+lastupdated: "2026-11-06"
 
 keywords: checking, readiness, errors
 
@@ -260,12 +260,12 @@ The vFSA admin password stored in IMS does not match the password configured on 
 ## Error 1173
 {: #error-1173}
 
-The vFSA admin password does not meet the complexity requirements introduced in version 7.6.6+. Update the password on the vFSA and in IMS to meet the requirements (minimum length 12, at least one uppercase letter, lowercase letter, special character, and number) and retry.
+The vFSA admin password does not meet the complexity requirements introduced in version 7.6.6 and later. Update the password on the vFSA and in IMS to meet the requirements (minimum length 15, at least one uppercase letter, lowercase letter, special character, and number) and retry.
 
 ## Error 1174
 {: #error-1174}
 
-The vFSA admin password in the import settings YAML file does not meet the complexity requirements for version 7.6.6+ deployments (minimum length 12, at least one uppercase letter, lowercase letter, special character, and number). Update the password and retry.
+The vFSA admin password in the import settings YAML file does not meet the complexity requirements for version 7.6.6 and later deployments (minimum length 15, at least one uppercase letter, lowercase letter, special character, and number). Update the password and retry.
 
 ## Warning 1186
 {: #warning-1186}
