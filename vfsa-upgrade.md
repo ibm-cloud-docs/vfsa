@@ -18,11 +18,7 @@ subcollection: vfsa
 Learn how to update the FortiOS firmware and Ubuntu hypervisor on your {{site.data.keyword.vfsa_full}}, including version requirements, supported maintenance methods, and important upgrade considerations.
 {: shortdesc}
 
-[Begin change]{: tag-green} 
-Applying FortiOS and Ubuntu updates, including security patches, is your responsibility. For more information, see [Managing firmware updates and vulnerability patches](/docs/vfsa?topic=vfsa-managing-vulnerabilities). 
-{: note}
 
-[End change]{: tag-green}
 
 A {{site.data.keyword.vfsa_full}} has two primary software components that require maintenance:
 
