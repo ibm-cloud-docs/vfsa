@@ -38,6 +38,9 @@ Do not use an IBM Cloud OS reload only to upgrade or downgrade FortiOS.
 
 To change the FortiOS version, use the FortiGate firmware upgrade tools in the FortiGate web interface. If the vFSA is managed by FortiManager, you can update the firmware through the FortiManager web interface instead.
 
+When upgrading to version 7.6.6 and later or version 7.4.12 and later, Fortinet enforces higher password complexity. After the upgrade, log in to the FortiManager web interface, create a password that meets the new requirements (a length of 15 or more characters is strongly recommended, with a minimum of 12; at least one uppercase letter, one lowercase letter, one special character, and one number), and update the password in the IBM Cloud console.
+{: important}
+
 A readiness check is not required before you upgrade or downgrade a FortiOS firmware.
 
 A vFSA can and must run a FortiOS release that is newer than the versions currently available for IBM Cloud provisioning or OS reload operations. IBM Cloud does not qualify for every FortiOS maintenance release for provisioning and reload operations.
