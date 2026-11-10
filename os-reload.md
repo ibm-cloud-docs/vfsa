@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-11-06"
+lastupdated: "2026-11-10"
 
 keywords: reloading, os, upgrading, kvm, ha, standalone
 
@@ -40,8 +40,6 @@ For a successful OS Reload on a vFSA, ensure the following:
 * Do not modify the vFSA configuration during the OS reload operation. For example, automated software agents attempting to modify one or both vFSA nodes. Configurations changes like these can corrupt the OS reload.
 
 * For HA deployments, the admin password for the provisioned vFSA gateway must match the admin password that is defined in the vFSA portal. The password in the portal was defined when you first provisioned the gateway, and it might not match the current gateway password. If so, use SSH to connect to the vFSA gateway and change the admin password to match. You can then proceed with the OS reload operation.
-
-* When reloading with vFSA version 7.6.6 and later, Fortinet enforces a stricter password policy. Before you perform an OS reload with version 7.6.6 and later, you must first update your existing vFSA admin password to meet the complexity requirements (minimum length of 15 characters, at least one uppercase letter, lowercase letter, special character, and number) and ensure it matches the password stored in the IBM Cloud console.
 
 * The vFSA configuration must allow admin SSH access to the vFSA private IP, before the OS reload request. This is required to rejoin the cluster. After the OS reload completes, if wanted, you can disable SSH access again.
 
