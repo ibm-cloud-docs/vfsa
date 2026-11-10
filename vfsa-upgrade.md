@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-05"
+lastupdated: "2026-11-10"
 
 keywords: reloading, os, upgrading, kvm, ha, standalone
 
@@ -17,6 +17,8 @@ subcollection: vfsa
 
 Learn how to update the FortiOS firmware and Ubuntu hypervisor on your {{site.data.keyword.vfsa_full}}, including version requirements, supported maintenance methods, and important upgrade considerations.
 {: shortdesc}
+
+
 
 A {{site.data.keyword.vfsa_full}} has two primary software components that require maintenance:
 
@@ -35,6 +37,9 @@ When you run an OS Reload or license readiness check, IBM Cloud detects the Fort
 Do not use an IBM Cloud OS reload only to upgrade or downgrade FortiOS.
 
 To change the FortiOS version, use the FortiGate firmware upgrade tools in the FortiGate web interface. If the vFSA is managed by FortiManager, you can update the firmware through the FortiManager web interface instead.
+
+When upgrading to version 7.6.6 and later or version 7.4.12 and later, Fortinet enforces higher password complexity. After the upgrade, log in to the FortiManager web interface, create a password that meets the new requirements (a length of 15 or more characters is strongly recommended, with a minimum of 12; at least one uppercase letter, one lowercase letter, one special character, and one number), and update the password in the IBM Cloud console.
+{: important}
 
 A readiness check is not required before you upgrade or downgrade a FortiOS firmware.
 
