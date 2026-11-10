@@ -15,6 +15,7 @@ toc:
       topics:
       - getting-started.md
       - about.md
+      - vfsa-vulnerabilities.md
       - include: ../fortigate-10g/explore-firewalls.md
       - include: ../gateway-appliance/ga-raci.md
       - include: ../gateway-appliance/managing-permissions-and-device-access.md
